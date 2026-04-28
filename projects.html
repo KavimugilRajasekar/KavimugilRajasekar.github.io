@@ -6,10 +6,19 @@
   <meta name="description" content="Kavimugil Rajasekar's project portfolio - showcasing AI-powered chatbot, food ordering system, and USB security application. Explore my technical work in Flutter, Node.js, PHP, and C#.">
   <meta name="keywords" content="Kavimugil Rajasekar, projects, portfolio, flutter projects, mobile development, web development, software projects">
   <meta name="author" content="Kavimugil Rajasekar">
+  <meta property="og:title" content="Projects | Kavimugil Rajasekar">
+  <meta property="og:description" content="Project portfolio - AI chatbot, food ordering system, USB unlock application. Flutter, Node.js, PHP, C#.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://KavimugilRajasekar.github.io/projects.html">
+  <link rel="canonical" href="https://KavimugilRajasekar.github.io/projects.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Projects | Kavimugil Rajasekar">
+  <meta name="twitter:description" content="Flutter, Node.js, PHP, C# projects.">
   <title>Projects | Kavimugil Rajasekar</title>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/projects.css">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -26,6 +35,11 @@
             <li><a href="projects.html" class="active">Projects</a></li>
             <li><a href="resume.html">Resume</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li>
+              <a href="bottle-art/index.html" class="bottle-icon-btn" id="bottle-mode-toggle" title="Bottle Art Mode">
+                <i class="fas fa-leaf"></i>
+              </a>
+            </li>
           </ul>
         </div>
         <div class="nav-toggle" id="nav-toggle">
@@ -49,7 +63,7 @@
       <div class="container">
         <div class="project" id="shopping-assistant">
           <div class="project-image">
-            <img src="assets/images/chatbot.png" alt="AI-Powered Shopping Assistant Chatbot interface screenshot" loading="lazy">
+            <img src="assets/images/chatbot.png" alt="AI-Powered Shopping Assistant Chatbot interface screenshot" loading="lazy" onerror="this.style.display='none'">
           </div>
           <div class="project-details">
             <h2>AI-Powered Shopping Assistant Chatbot</h2>
@@ -78,7 +92,7 @@
 
         <div class="project" id="food-ordering">
           <div class="project-image">
-            <img src="assets/images/food-ordering.png" alt="Online Food Ordering System interface screenshot" loading="lazy">
+            <img src="assets/images/food-ordering.png" alt="Online Food Ordering System interface screenshot" loading="lazy" onerror="this.style.display='none'">
           </div>
           <div class="project-details">
             <h2>Online Food Ordering and Login Web Application</h2>
@@ -108,7 +122,7 @@
 
         <div class="project" id="usb-unlock">
           <div class="project-image">
-            <img src="assets/images/unlock.png" alt="USB-Unlock Application interface screenshot" loading="lazy">
+            <img src="assets/images/unlock.png" alt="USB-Unlock Application interface screenshot" loading="lazy" onerror="this.style.display='none'">
           </div>
           <div class="project-details">
             <h2>USB-Unlock (Console and service based application)</h2>
@@ -139,7 +153,7 @@
 
   <footer>
     <div class="container">
-      <p>&copy; 2025 Kavimugil Rajasekar. All rights reserved.</p>
+      <p>&copy; <span id="year"></span> Kavimugil Rajasekar. All rights reserved.</p>
     </div>
   </footer>
 

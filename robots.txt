@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://KavimugilRajasekar.github.io/sitemap.xml

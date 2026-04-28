@@ -6,9 +6,20 @@
   <meta name="description" content="Kavimugil Rajasekar - Computer Science Engineer & Flutter Developer. Portfolio showcasing projects, skills, and experience in mobile development, backend systems, and software engineering.">
   <meta name="keywords" content="Kavimugil Rajasekar, portfolio, computer science, flutter developer, mobile development, software engineer">
   <meta name="author" content="Kavimugil Rajasekar">
+  <meta property="og:title" content="Kavimugil Rajasekar | Portfolio">
+  <meta property="og:description" content="Computer Science Engineer & Flutter Developer. Portfolio showcasing projects, skills, and experience in mobile development, backend systems, and software engineering.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://KavimugilRajasekar.github.io">
+  <meta property="og:image" content="https://raw.githubusercontent.com/KavimugilRajasekar/AssetsHosting/main/profile-preview.png">
+  <link rel="canonical" href="https://KavimugilRajasekar.github.io/index.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kavimugil Rajasekar | Portfolio">
+  <meta name="twitter:description" content="Computer Science Engineer & Flutter Developer.">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/KavimugilRajasekar/AssetsHosting/main/profile-preview.png">
   <title>Kavimugil Rajasekar | Portfolio</title>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -25,6 +36,11 @@
             <li><a href="projects.html">Projects</a></li>
             <li><a href="resume.html">Resume</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li>
+              <a href="bottle-art/index.html" class="bottle-icon-btn" id="bottle-mode-toggle" title="Bottle Art Mode">
+                <i class="fas fa-leaf"></i>
+              </a>
+            </li>
           </ul>
         </div>
         <div class="nav-toggle" id="nav-toggle">
@@ -79,10 +95,13 @@
 
   <footer>
     <div class="container">
-      <p>&copy; 2025 Kavimugil Rajasekar. All rights reserved.</p>
+      <p>&copy; <span id="year"></span> Kavimugil Rajasekar. All rights reserved.</p>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

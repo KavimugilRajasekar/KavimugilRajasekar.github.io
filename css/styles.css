@@ -141,6 +141,31 @@ header {
   border-bottom: 2px solid var(--primary-color);
 }
 
+/* Bottle Art Icon Button - Blue to match Portfolio theme */
+.bottle-icon-btn {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, #3498db, #2c3e50) !important;
+  color: white !important;
+  border-radius: 50%;
+  margin-left: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(52, 152, 219, 0.3);
+}
+
+.bottle-icon-btn:hover {
+  transform: rotate(20deg) scale(1.1);
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+  background: linear-gradient(135deg, #2980b9, #1a5276) !important;
+}
+
+.bottle-icon-btn i {
+  font-size: 1rem;
+}
+
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -331,15 +356,15 @@ footer p {
   .hero-content h1 {
     font-size: 2.2rem;
   }
-  
+
   .hero-content h2 {
     font-size: 1.4rem;
   }
-  
+
   nav ul {
     flex-wrap: wrap;
   }
-  
+
   nav ul li {
     margin: 5px 10px;
   }

@@ -6,10 +6,19 @@
   <meta name="description" content="About Kavimugil Rajasekar - Computer Science undergraduate at Government College of Technology, Coimbatore. Learn about my education, skills, and professional experience in mobile development and software engineering.">
   <meta name="keywords" content="Kavimugil Rajasekar, about, education, skills, computer science, flutter developer">
   <meta name="author" content="Kavimugil Rajasekar">
+  <meta property="og:title" content="About | Kavimugil Rajasekar">
+  <meta property="og:description" content="About Kavimugil Rajasekar - Computer Science undergraduate at Government College of Technology, Coimbatore.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://KavimugilRajasekar.github.io/about.html">
+  <link rel="canonical" href="https://KavimugilRajasekar.github.io/about.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="About | Kavimugil Rajasekar">
+  <meta name="twitter:description" content="Computer Science undergraduate at GCT Coimbatore.">
   <title>About | Kavimugil Rajasekar</title>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/about.css">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -26,6 +35,11 @@
             <li><a href="projects.html">Projects</a></li>
             <li><a href="resume.html">Resume</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li>
+              <a href="bottle-art/index.html" class="bottle-icon-btn" id="bottle-mode-toggle" title="Bottle Art Mode">
+                <i class="fas fa-leaf"></i>
+              </a>
+            </li>
           </ul>
         </div>
         <div class="nav-toggle" id="nav-toggle">
@@ -49,7 +63,7 @@
       <div class="container">
         <div class="bio-grid">
           <div class="bio-image">
-            <img src="assets/images/profile.jpg" alt="Profile photo of Kavimugil Rajasekar" loading="lazy">
+            <img src="assets/images/profile.jpg" alt="Profile photo of Kavimugil Rajasekar" loading="lazy" onerror="this.style.display='none'">
           </div>
           <div class="bio-content">
             <h2>Who Am I?</h2>
@@ -167,7 +181,7 @@
 
   <footer>
     <div class="container">
-      <p>&copy; 2025 Kavimugil Rajasekar. All rights reserved.</p>
+      <p>&copy; <span id="year"></span> Kavimugil Rajasekar. All rights reserved.</p>
     </div>
   </footer>
 

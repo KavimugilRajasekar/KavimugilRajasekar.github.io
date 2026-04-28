@@ -6,10 +6,20 @@
   <meta name="description" content="Kavimugil Rajasekar's resume - Computer Science Engineer & Flutter Developer. View my professional background, qualifications, and download my CV.">
   <meta name="keywords" content="Kavimugil Rajasekar, resume, CV, computer science resume, flutter developer resume, portfolio">
   <meta name="author" content="Kavimugil Rajasekar">
+  <meta property="og:title" content="Resume | Kavimugil Rajasekar">
+  <meta property="og:description" content="Professional resume of Kavimugil Rajasekar - Computer Science Engineer & Flutter Developer.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://KavimugilRajasekar.github.io/resume.html">
+  <link rel="canonical" href="https://KavimugilRajasekar.github.io/resume.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Resume | Kavimugil Rajasekar">
+  <meta name="twitter:description" content="Professional resume of Kavimugil Rajasekar.">
   <title>Resume | Kavimugil Rajasekar</title>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/resume.css">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 </head>
@@ -27,6 +37,11 @@
             <li><a href="projects.html">Projects</a></li>
             <li><a href="resume.html" class="active">Resume</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li>
+              <a href="bottle-art/index.html" class="bottle-icon-btn" id="bottle-mode-toggle" title="Bottle Art Mode">
+                <i class="fas fa-leaf"></i>
+              </a>
+            </li>
           </ul>
         </div>
         <div class="nav-toggle" id="nav-toggle">
@@ -68,34 +83,41 @@
 
   <footer>
     <div class="container">
-      <p>&copy; 2025 Kavimugil Rajasekar. All rights reserved.</p>
+      <p>&copy; <span id="year"></span> Kavimugil Rajasekar. All rights reserved.</p>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
   <script>
-    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-    const container = document.getElementById('pdf-container');
-    const errorMsg = document.getElementById('pdf-error');
+    document.addEventListener('DOMContentLoaded', function() {
+      if (typeof pdfjsLib !== 'undefined') {
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+        const container = document.getElementById('pdf-container');
+        const errorMsg = document.getElementById('pdf-error');
 
-    pdfjsLib.getDocument('https://raw.githubusercontent.com/KavimugilRajasekar/AssetsHosting/main/Kavimugil_Rajasekar_Resume.pdf').promise.then(function(pdf) {
-      const pagesNeeded = Math.min(pdf.numPages, 2);
-      for (let i = 1; i <= pagesNeeded; i++) {
-        pdf.getPage(i).then(function(page) {
-          const scale = 1.5;
-          const viewport = page.getViewport({ scale: scale });
-          const canvas = document.createElement('canvas');
-          canvas.height = viewport.height;
-          canvas.width = viewport.width;
-          canvas.style.margin = '0 auto';
-          canvas.style.display = 'block';
-          container.appendChild(canvas);
-          page.render({ canvasContext: canvas.getContext('2d'), viewport: viewport });
+        pdfjsLib.getDocument('https://raw.githubusercontent.com/KavimugilRajasekar/AssetsHosting/main/Kavimugil_Rajasekar_Resume.pdf').promise.then(function(pdf) {
+          const pagesNeeded = Math.min(pdf.numPages, 2);
+          for (let i = 1; i <= pagesNeeded; i++) {
+            pdf.getPage(i).then(function(page) {
+              const scale = 1.5;
+              const viewport = page.getViewport({ scale: scale });
+              const canvas = document.createElement('canvas');
+              canvas.height = viewport.height;
+              canvas.width = viewport.width;
+              canvas.style.margin = '0 auto';
+              canvas.style.display = 'block';
+              container.appendChild(canvas);
+              page.render({ canvasContext: canvas.getContext('2d'), viewport: viewport });
+            });
+          }
+        }).catch(function() {
+          container.style.display = 'none';
+          errorMsg.style.display = 'block';
         });
+      } else {
+        document.getElementById('pdf-container').style.display = 'none';
+        document.getElementById('pdf-error').style.display = 'block';
       }
-    }).catch(function() {
-      container.style.display = 'none';
-      errorMsg.style.display = 'block';
     });
   </script>
 </body>
