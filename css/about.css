@@ -1,0 +1,275 @@
+/* About Hero Section */
+.about-hero {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 150px 0 80px;
+  text-align: center;
+}
+
+.about-hero h1 {
+  font-size: 3rem;
+  color: var(--dark-color);
+  margin-bottom: 15px;
+}
+
+.about-hero p {
+  font-size: 1.2rem;
+  color: var(--text-light);
+}
+
+/* Bio Section */
+.bio-section {
+  padding: 80px 0;
+}
+
+.bio-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.bio-image img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.bio-content h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--dark-color);
+}
+
+.bio-content p {
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+.personal-info {
+  margin-top: 30px;
+}
+
+.info-item {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.info-label {
+  font-weight: 600;
+  width: 100px;
+  color: var(--dark-color);
+}
+
+.info-value {
+  color: var(--text-light);
+}
+
+/* Education Section */
+.education-section {
+  padding: 60px 0;
+  background: #f9f9f9;
+}
+
+.education-section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.2rem;
+  color: var(--dark-color);
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: 50px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--primary-color);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.timeline-date {
+  position: absolute;
+  left: -50px;
+  top: 0;
+  background: var(--primary-color);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+.timeline-content {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-content h3 {
+  margin-bottom: 5px;
+  color: var(--dark-color);
+}
+
+.timeline-content h4 {
+  margin-bottom: 10px;
+  font-weight: 400;
+  color: var(--primary-color);
+}
+
+/* Skills Section */
+.skills-section {
+  padding: 80px 0;
+}
+
+.skills-section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.2rem;
+  color: var(--dark-color);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.skill-category {
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.skill-category h3 {
+  margin-bottom: 15px;
+  color: var(--primary-color);
+  font-size: 1.3rem;
+}
+
+.skill-category ul {
+  list-style: none;
+}
+
+.skill-category li {
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.skill-category li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+}
+
+/* Languages Section */
+.languages-section {
+  padding: 60px 0;
+  background: #f9f9f9;
+}
+
+.languages-section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.2rem;
+  color: var(--dark-color);
+}
+
+.language-list {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.language-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.language-name {
+  font-weight: 600;
+  color: var(--dark-color);
+}
+
+.language-level {
+  color: var(--text-light);
+}
+
+/* Leadership Section */
+.leadership-section {
+  padding: 80px 0;
+}
+
+.leadership-section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.2rem;
+  color: var(--dark-color);
+}
+
+.experience-card {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.experience-card h3 {
+  margin-bottom: 5px;
+  color: var(--dark-color);
+}
+
+.experience-card h4 {
+  margin-bottom: 15px;
+  font-weight: 400;
+  color: var(--primary-color);
+}
+
+.experience-card ul {
+  margin-left: 20px;
+}
+
+.experience-card li {
+  margin-bottom: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .bio-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .bio-image {
+    max-width: 300px;
+    margin: 0 auto 30px;
+  }
+  
+  .timeline {
+    padding-left: 30px;
+  }
+  
+  .timeline::before {
+    left: 10px;
+  }
+  
+  .timeline-date {
+    left: -30px;
+  }
+}

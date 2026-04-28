@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kavimugil Rajasekar's resume - Computer Science Engineer & Flutter Developer. View my professional background, qualifications, and download my CV.">
+  <meta name="keywords" content="Kavimugil Rajasekar, resume, CV, computer science resume, flutter developer resume, portfolio">
+  <meta name="author" content="Kavimugil Rajasekar">
+  <title>Resume | Kavimugil Rajasekar</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/resume.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="nav-container">
+        <div class="nav-logo">
+          <a href="index.html">Kavimugil</a>
+        </div>
+        <div class="nav-menu" id="nav-menu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="resume.html" class="active">Resume</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="nav-toggle" id="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="resume-main">
+    <section class="resume-hero">
+      <div class="container">
+        <h1>My Resume</h1>
+        <p>Professional background and qualifications</p>
+        <a href="https://raw.githubusercontent.com/KavimugilRajasekar/AssetsHosting/main/Kavimugil_Rajasekar_Resume.pdf" download="Kavimugil_Rajasekar_Resume.pdf" class="btn"><i class="fas fa-download"></i> Download PDF</a>
+      </div>
+    </section>
+
+    <section class="resume-section">
+      <div class="container">
+        <div class="resume-container">
+            <div class="resume-viewer">
+                <div id="pdf-container"></div>
+                <p id="pdf-error" style="display:none;">
+                    Unable to preview PDF. <a href="https://raw.githubusercontent.com/KavimugilRajasekar/AssetsHosting/main/Kavimugil_Rajasekar_Resume.pdf" download="Kavimugil_Rajasekar_Resume.pdf">Download the PDF</a> instead.
+                </p>
+            </div>
+            
+            <p class="pdf-note">
+                <a href="https://raw.githubusercontent.com/KavimugilRajasekar/AssetsHosting/main/Kavimugil_Rajasekar_Resume.pdf" download="Kavimugil_Rajasekar_Resume.pdf">Download Resume</a> | 
+                <a href="contact.html">Contact Me</a>
+            </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Kavimugil Rajasekar. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    const container = document.getElementById('pdf-container');
+    const errorMsg = document.getElementById('pdf-error');
+
+    pdfjsLib.getDocument('https://raw.githubusercontent.com/KavimugilRajasekar/AssetsHosting/main/Kavimugil_Rajasekar_Resume.pdf').promise.then(function(pdf) {
+      const pagesNeeded = Math.min(pdf.numPages, 2);
+      for (let i = 1; i <= pagesNeeded; i++) {
+        pdf.getPage(i).then(function(page) {
+          const scale = 1.5;
+          const viewport = page.getViewport({ scale: scale });
+          const canvas = document.createElement('canvas');
+          canvas.height = viewport.height;
+          canvas.width = viewport.width;
+          canvas.style.margin = '0 auto';
+          canvas.style.display = 'block';
+          container.appendChild(canvas);
+          page.render({ canvasContext: canvas.getContext('2d'), viewport: viewport });
+        });
+      }
+    }).catch(function() {
+      container.style.display = 'none';
+      errorMsg.style.display = 'block';
+    });
+  </script>
+</body>
+</html>
