@@ -26,6 +26,117 @@
   <link rel="stylesheet" href="css/blueprint.css">
   <link rel="stylesheet" href="css/layout.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <style>
+    /* PDF container enhancements */
+    .pdf-wrapper {
+      background: #f8f6f0;
+      border-radius: 8px;
+      padding: 24px;
+      box-shadow: inset 0 2px 8px rgba(0,0,0,0.06);
+      min-height: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .pdf-wrapper canvas {
+      border-radius: 4px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+      transition: box-shadow 0.3s ease;
+      max-width: 100%;
+      height: auto !important;
+      margin: 8px 0;
+      image-rendering: auto;
+      background: white;
+    }
+    .pdf-wrapper canvas:hover {
+      box-shadow: 0 8px 40px rgba(0,0,0,0.15);
+    }
+    .pdf-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.04em;
+      color: #6b6b6b;
+      background: rgba(0,0,0,0.04);
+      padding: 6px 14px;
+      border-radius: 20px;
+      display: inline-block;
+      word-break: break-all;
+      max-width: 100%;
+      margin-bottom: 16px;
+    }
+    .pdf-page-divider {
+      width: 80%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(0,0,0,0.08), transparent);
+      margin: 16px 0;
+    }
+    @media (max-width: 640px) {
+      .pdf-label {
+        font-size: 0.6rem;
+        padding: 4px 10px;
+        word-break: break-all;
+        max-width: 100%;
+        display: inline-block;
+        white-space: normal;
+      }
+      .pdf-wrapper {
+        padding: 12px;
+        min-height: 300px;
+      }
+      .pdf-wrapper canvas {
+        border-radius: 3px;
+      }
+    }
+    /* Loading shimmer effect */
+    .pdf-loading {
+      text-align: center;
+      padding: 60px 20px;
+      color: #6b6b6b;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+    }
+    .pdf-loading::after {
+      content: '...';
+      animation: dots 1.5s steps(4, end) infinite;
+    }
+    @keyframes dots {
+      0% { content: ''; }
+      25% { content: '.'; }
+      50% { content: '..'; }
+      75% { content: '...'; }
+    }
+    /* Zoom controls */
+    .pdf-controls {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      align-items: center;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+    .pdf-controls button {
+      background: rgba(0,0,0,0.05);
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 4px;
+      padding: 6px 14px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      color: #2d2d2d;
+    }
+    .pdf-controls button:hover {
+      background: rgba(0,0,0,0.10);
+      transform: scale(1.02);
+    }
+    .pdf-controls span {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: #6b6b6b;
+      min-width: 40px;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -69,22 +180,33 @@
             <span class="label">04.1 — Document</span>
           </div>
           <div style="text-align:center; margin-bottom:24px;">
-            <a class="btn-solid" href="https://raw.githubusercontent.com/KavimugilRajasekar/AssetsHosting/main/Kavimugil_Rajasekar_Resume.pdf" download="Kavimugil_Rajasekar_Resume.pdf">
+            <a class="btn-solid" href="assets/resume/Kavimugil_Rajasekar_Resume.pdf" download="Kavimugil_Rajasekar_Resume.pdf">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 4v12M6 12l6 6 6-6M4 20h16"/></svg>
               Download PDF
             </a>
           </div>
-          <div class="cta-form" style="max-width: 900px;">
+          <div class="cta-form" style="max-width: 1000px;">
             <span class="corner tl"></span><span class="corner tr"></span>
             <span class="corner bl"></span><span class="corner br"></span>
-            <div class="cell-label cell-label--coral" style="margin-bottom: 16px;">PDF // Kavimugil_Rajasekar_Resume.pdf</div>
-            <div id="pdf-container" style="text-align:center;"></div>
-            <p id="pdf-error" style="display:none; text-align:center; padding: 24px;">
-              Unable to preview PDF. <a class="btn-ghost" style="margin-top:8px;" href="https://raw.githubusercontent.com/KavimugilRajasekar/AssetsHosting/main/Kavimugil_Rajasekar_Resume.pdf" download="Kavimugil_Rajasekar_Resume.pdf">Download the PDF</a> instead.
+            <div style="text-align:center;">
+              <span class="pdf-label">Kavimugil_Rajasekar_Resume.pdf</span>
+            </div>
+            <div id="pdf-container" class="pdf-wrapper">
+              <div class="pdf-loading">Loading resume</div>
+            </div>
+            <div class="pdf-controls">
+              <button onclick="zoomPDF(-0.2)">−</button>
+              <span id="zoom-level">100%</span>
+              <button onclick="zoomPDF(0.2)">+</button>
+              <button onclick="resetZoom()" style="font-size:0.65rem;">Reset</button>
+            </div>
+            <p id="pdf-error" style="display:none; text-align:center; padding: 24px; color: #b91c1c;">
+              Unable to preview PDF. 
+              <a class="btn-ghost" style="margin-top:8px; display:inline-block;" href="assets/resume/Kavimugil_Rajasekar_Resume.pdf" download="Kavimugil_Rajasekar_Resume.pdf">Download the PDF</a> instead.
             </p>
           </div>
-          <p class="text-mono text-upper" style="margin-top: 24px; text-align:center;">
-            <a href="https://raw.githubusercontent.com/KavimugilRajasekar/AssetsHosting/main/Kavimugil_Rajasekar_Resume.pdf" download="Kavimugil_Rajasekar_Resume.pdf">Download Resume</a>
+          <p class="text-mono text-upper" style="margin-top: 24px; text-align:center; font-size: clamp(0.65rem, 1.5vw, 0.8rem);">
+            <a href="assets/resume/Kavimugil_Rajasekar_Resume.pdf" download="Kavimugil_Rajasekar_Resume.pdf">Download Resume</a>
             &nbsp;//&nbsp;
             <a href="contact.html">Contact Me</a>
           </p>
@@ -129,37 +251,121 @@
   <script src="js/tubes.js" defer></script>
   <script src="js/main.js" defer></script>
   <script>
+    // Global variables for zoom control
+    var currentScale = 3;
+    var pdfDoc = null;
+    var canvasElements = [];
+    var pageObjects = [];
+
     document.addEventListener('DOMContentLoaded', function () {
-      if (typeof pdfjsLib === 'undefined') {
-        document.getElementById('pdf-container').style.display = 'none';
-        document.getElementById('pdf-error').style.display = 'block';
-        return;
-      }
-      pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
       var container = document.getElementById('pdf-container');
       var errorMsg = document.getElementById('pdf-error');
-      pdfjsLib.getDocument('https://raw.githubusercontent.com/KavimugilRajasekar/AssetsHosting/main/Kavimugil_Rajasekar_Resume.pdf').promise.then(function (pdf) {
-        var pagesNeeded = Math.min(pdf.numPages, 2);
-        for (var i = 1; i <= pagesNeeded; i++) {
-          pdf.getPage(i).then(function (page) {
-            var scale = 1.5;
-            var viewport = page.getViewport({ scale: scale });
-            var canvas = document.createElement('canvas');
-            canvas.height = viewport.height;
-            canvas.width = viewport.width;
-            canvas.style.margin = '0 auto';
-            canvas.style.display = 'block';
-            canvas.style.maxWidth = '100%';
-            canvas.style.height = 'auto';
-            container.appendChild(canvas);
-            page.render({ canvasContext: canvas.getContext('2d'), viewport: viewport });
-          });
-        }
-      }).catch(function () {
+      var loadingEl = container.querySelector('.pdf-loading');
+
+      if (typeof pdfjsLib === 'undefined') {
+        if (loadingEl) loadingEl.style.display = 'none';
         container.style.display = 'none';
         errorMsg.style.display = 'block';
-      });
+        return;
+      }
+
+      pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+      
+      pdfjsLib.getDocument('assets/resume/Kavimugil_Rajasekar_Resume.pdf').promise
+        .then(function (pdf) {
+          pdfDoc = pdf;
+          if (loadingEl) loadingEl.style.display = 'none';
+          
+          var pagesNeeded = Math.min(pdf.numPages, 2);
+          
+          for (var i = 1; i <= pagesNeeded; i++) {
+            pdf.getPage(i).then(function (page) {
+              pageObjects.push(page);
+              renderPage(page);
+            });
+          }
+        })
+        .catch(function (err) {
+          console.warn('PDF loading error:', err);
+          if (loadingEl) loadingEl.style.display = 'none';
+          container.style.display = 'none';
+          errorMsg.style.display = 'block';
+        });
     });
+
+    function renderPage(page) {
+      var container = document.getElementById('pdf-container');
+      var viewport = page.getViewport({ scale: currentScale });
+      var canvas = document.createElement('canvas');
+      canvas.height = viewport.height;
+      canvas.width = viewport.width;
+      canvas.style.margin = '8px auto';
+      canvas.style.display = 'block';
+      canvas.style.maxWidth = '100%';
+      canvas.style.height = 'auto';
+      canvas.style.boxShadow = '0 2px 12px rgba(0,0,0,0.06)';
+      canvas.style.borderRadius = '4px';
+      canvas.style.background = 'white';
+      
+      // Store reference for zoom
+      canvas.dataset.pageIndex = page.pageIndex;
+      canvasElements.push(canvas);
+      
+      // Add page divider between pages
+      if (canvasElements.length > 1) {
+        var divider = document.createElement('div');
+        divider.className = 'pdf-page-divider';
+        container.appendChild(divider);
+      }
+      
+      container.appendChild(canvas);
+      
+      var renderContext = {
+        canvasContext: canvas.getContext('2d'),
+        viewport: viewport
+      };
+      page.render(renderContext);
+      
+      // Update zoom display
+      updateZoomDisplay();
+    }
+
+    function updateZoomDisplay() {
+      var zoomPercent = Math.round((currentScale / 1.5) * 100);
+      document.getElementById('zoom-level').textContent = zoomPercent + '%';
+    }
+
+    function zoomPDF(delta) {
+      if (!pdfDoc) return;
+      
+      currentScale = Math.max(0.5, Math.min(4.0, currentScale + delta));
+      
+      // Clear existing canvases
+      var container = document.getElementById('pdf-container');
+      var canvases = container.querySelectorAll('canvas');
+      var dividers = container.querySelectorAll('.pdf-page-divider');
+      
+      canvases.forEach(function(c) { c.remove(); });
+      dividers.forEach(function(d) { d.remove(); });
+      
+      canvasElements = [];
+      
+      // Re-render all pages
+      pageObjects.forEach(function(page) {
+        renderPage(page);
+      });
+      
+      updateZoomDisplay();
+    }
+
+    function resetZoom() {
+      currentScale = 1.5;
+      zoomPDF(0); // This will re-render at current scale
+    }
+
+    // Expose zoom functions globally
+    window.zoomPDF = zoomPDF;
+    window.resetZoom = resetZoom;
   </script>
 </body>
 </html>
