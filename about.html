@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="About Kavimugil Rajasekar - Computer Science undergraduate at Government College of Technology, Coimbatore. Learn about my education, skills, and professional experience in mobile development and software engineering.">
+  <meta name="description" content="About Kavimugil Rajasekar — Computer Science undergraduate at Government College of Technology, Coimbatore. Education, skills, and leadership.">
   <meta name="keywords" content="Kavimugil Rajasekar, about, education, skills, computer science, flutter developer">
   <meta name="author" content="Kavimugil Rajasekar">
   <meta property="og:title" content="About | Kavimugil Rajasekar">
-  <meta property="og:description" content="About Kavimugil Rajasekar - Computer Science undergraduate at Government College of Technology, Coimbatore.">
+  <meta property="og:description" content="About Kavimugil Rajasekar — Computer Science undergraduate at GCT Coimbatore.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://KavimugilRajasekar.github.io/about.html">
   <link rel="canonical" href="https://KavimugilRajasekar.github.io/about.html">
@@ -15,176 +15,224 @@
   <meta name="twitter:title" content="About | Kavimugil Rajasekar">
   <meta name="twitter:description" content="Computer Science undergraduate at GCT Coimbatore.">
   <title>About | Kavimugil Rajasekar</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/about.css">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com"    crossorigin>
+  <link rel="preconnect" href="https://api.fontshare.com"     crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=general-sans@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/blueprint.css">
+  <link rel="stylesheet" href="css/layout.css">
 </head>
 <body>
-  <header>
-    <nav>
-      <div class="nav-container">
-        <div class="nav-logo">
-          <a href="index.html">Kavimugil</a>
-        </div>
-        <div class="nav-menu" id="nav-menu">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html" class="active">About</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="resume.html">Resume</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li>
-              <a href="bottle-art/index.html" class="bottle-icon-btn" id="bottle-mode-toggle" title="Bottle Art Mode">
-                <i class="fas fa-leaf"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="nav-toggle" id="nav-toggle">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+  <header class="site-header">
+    <div class="nav-row">
+      <a class="brand-logo" href="index.html" aria-label="Kavimugil — Home">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="12" y1="3" x2="12" y2="21"/></svg>
+      </a>
+      <nav class="nav-links" id="nav-links" aria-label="Primary">
+        <a href="index.html">01. Index</a>
+        <a href="about.html" class="active">02. About</a>
+        <a href="projects.html">03. Projects</a>
+        <a href="resume.html">04. Resume</a>
+        <a href="contact.html">05. Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn-ghost" href="resume.html">CV</a>
+        <a class="btn-solid" href="contact.html">Hire</a>
+        <a class="bottle-icon-btn" href="bottle-art/index.html" title="Bottle Art mode" aria-label="Switch to Bottle Art">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2C12 6 9 7 9 11c0 4 3 4 3 9 0 1-1 2-3 2M12 2c0 4 3 5 3 9 0 4-3 4-3 9 0 1 1 2 3 2M5 14c2 0 3 1 3 3M19 14c-2 0-3 1-3 3"/></svg>
+        </a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </div>
-    </nav>
+    </div>
   </header>
 
-  <main class="about-main">
-    <section class="about-hero">
-      <div class="container">
-        <h1>About Me</h1>
-        <p>Get to know more about my journey, skills, and aspirations</p>
-      </div>
-    </section>
+  <div class="page-shell">
+    <main>
+      <section class="page-title-block">
+        <div>
+          <span class="label">02 — About</span>
+          <h1>Who Am I</h1>
+        </div>
+        <p>Get to know more about my journey, skills, and aspirations.</p>
+      </section>
 
-    <section class="bio-section">
-      <div class="container">
-        <div class="bio-grid">
-          <div class="bio-image">
-            <img src="assets/images/profile.jpg" alt="Profile photo of Kavimugil Rajasekar" loading="lazy" onerror="this.style.display='none'">
-          </div>
-          <div class="bio-content">
-            <h2>Who Am I?</h2>
-            <p>I'm Kavimugil Rajasekar, a passionate Computer Science undergraduate currently pursuing my Bachelor's degree at Government College of Technology, Coimbatore. With a CCPA of 7.95/10, I'm dedicated to mastering both the theoretical and practical aspects of computer science.</p>
-            <p>My journey in technology began with a curiosity about how software works, which has evolved into a deep passion for mobile application development, particularly using Flutter. I'm also interested in backend development and database management.</p>
-            <div class="personal-info">
-              <div class="info-item">
-                <span class="info-label">Name:</span>
-                <span class="info-value">Kavimugil Rajasekar</span>
-              </div>
-              <div class="info-item">
-                <span class="info-label">Email:</span>
-                <span class="info-value">kavimugil28@gmail.com</span>
-              </div>
-              <div class="info-item">
-                <span class="info-label">Phone:</span>
-                <span class="info-value">+91 75503 47146</span>
-              </div>
-              <div class="info-item">
-                <span class="info-label">From:</span>
-                <span class="info-value">Dharmapuri, TamilNadu, India</span>
+      <!-- BIO -->
+      <section class="section">
+        <div class="container">
+          <div class="grid-2">
+            <div>
+              <img class="blend-lum" src="assets/images/profile.jpg" alt="Profile photo of Kavimugil Rajasekar" loading="lazy" onerror="this.style.display='none'">
+            </div>
+            <div class="stack-3">
+              <span class="cell-label cell-label--coral">02.1 — Bio</span>
+              <h2>Building software with intent</h2>
+              <p>I'm Kavimugil Rajasekar, a passionate Computer Science undergraduate currently pursuing my Bachelor's degree at Government College of Technology, Coimbatore. With a CCPA of 7.95/10, I'm dedicated to mastering both the theoretical and practical aspects of computer science.</p>
+              <p>My journey in technology began with a curiosity about how software works, which has evolved into a deep passion for mobile application development, particularly using Flutter. I'm also interested in backend development and database management.</p>
+              <hr class="divider">
+              <div class="stack-2">
+                <div style="display:flex; gap:16px;"><span class="text-mono text-upper" style="min-width:80px; color:var(--forest);">Name</span><span>Kavimugil Rajasekar</span></div>
+                <div style="display:flex; gap:16px;"><span class="text-mono text-upper" style="min-width:80px; color:var(--forest);">Email</span><span>kavimugil28@gmail.com</span></div>
+                <div style="display:flex; gap:16px;"><span class="text-mono text-upper" style="min-width:80px; color:var(--forest);">Phone</span><span>+91 75503 47146</span></div>
+                <div style="display:flex; gap:16px;"><span class="text-mono text-upper" style="min-width:80px; color:var(--forest);">From</span><span>Dharmapuri, TamilNadu, India</span></div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="education-section">
-      <div class="container">
-        <h2>Education</h2>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-date">2023 - 2027</div>
-            <div class="timeline-content">
-              <h3>Bachelor of Engineering in Computer Science</h3>
-              <h4>Government College of Technology, Coimbatore</h4>
-              <p>Current CCPA: 7.95/10</p>
+      <!-- NETWORK GRAPH -->
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>Network</h2>
+            <span class="label">02.2 — Stack Topology</span>
+          </div>
+          <div class="net-graph" aria-hidden="true">
+            <span class="center-node"></span>
+            <svg viewBox="0 0 450 450">
+              <g stroke="#1A3C2B" stroke-opacity="0.2" stroke-width="1" fill="none">
+                <line x1="225" y1="225" x2="225" y2="85"/>
+                <line x1="225" y1="225" x2="341" y2="297"/>
+                <line x1="225" y1="225" x2="109" y2="297"/>
+              </g>
+              <circle cx="225" cy="225" r="140" fill="none" stroke="#3A3A38" stroke-opacity="0.30" stroke-dasharray="3 5"/>
+              <g class="orbit-group">
+                <circle cx="225" cy="85"  r="6" fill="#1A3C2B"/>
+                <circle cx="341" cy="297" r="6" fill="#FF8C69"/>
+                <circle cx="109" cy="297" r="6" fill="#F4D35E"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- EDUCATION -->
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>Education</h2>
+            <span class="label">02.3 — Timeline</span>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <span class="timeline-date">2023 — 2027</span>
+              <div class="timeline-content">
+                <span class="status-badge"><span class="dot"></span>Active</span>
+                <h3 style="margin-top:8px;">Bachelor of Engineering in Computer Science</h3>
+                <p>Government College of Technology, Coimbatore</p>
+                <p>Current CCPA: <strong>7.95/10</strong></p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="skills-section">
-      <div class="container">
-        <h2>Technical Skills</h2>
-        <div class="skills-grid">
-          <div class="skill-category">
-            <h3>Languages</h3>
-            <ul>
-              <li>Java</li>
-              <li>Python</li>
-              <li>C#</li>
-              <li>PHP</li>
-            </ul>
+      <!-- SKILLS -->
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>Technical Skills</h2>
+            <span class="label">02.4 — Stack</span>
           </div>
-          <div class="skill-category">
-            <h3>Frameworks</h3>
-            <ul>
-              <li>Flutter</li>
-              <li>Node.js</li>
-            </ul>
-          </div>
-          <div class="skill-category">
-            <h3>Tools & Technologies</h3>
-            <ul>
-              <li>Git</li>
-              <li>MySQL</li>
-              <li>Android Studio</li>
-            </ul>
-          </div>
-          <div class="skill-category">
-            <h3>Platforms</h3>
-            <ul>
-              <li>Android</li>
-              <li>Windows</li>
-              <li>Linux</li>
-            </ul>
+          <div class="bento bento-4">
+            <article class="cell">
+              <span class="cell-label cell-label--coral">Languages</span>
+              <ul class="tech-tags">
+                <li class="tech-tag">Java</li>
+                <li class="tech-tag">Python</li>
+                <li class="tech-tag">C#</li>
+                <li class="tech-tag">PHP</li>
+              </ul>
+            </article>
+            <article class="cell">
+              <span class="cell-label cell-label--mint">Frameworks</span>
+              <ul class="tech-tags">
+                <li class="tech-tag">Flutter</li>
+                <li class="tech-tag">Node.js</li>
+              </ul>
+            </article>
+            <article class="cell">
+              <span class="cell-label cell-label--gold">Tools</span>
+              <ul class="tech-tags">
+                <li class="tech-tag">Git</li>
+                <li class="tech-tag">MySQL</li>
+                <li class="tech-tag">Android Studio</li>
+              </ul>
+            </article>
+            <article class="cell">
+              <span class="cell-label cell-label--coral">Platforms</span>
+              <ul class="tech-tags">
+                <li class="tech-tag">Android</li>
+                <li class="tech-tag">Windows</li>
+                <li class="tech-tag">Linux</li>
+              </ul>
+            </article>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="languages-section">
-      <div class="container">
-        <h2>Languages</h2>
-        <div class="language-list">
-          <div class="language-item">
-            <span class="language-name">English</span>
-            <span class="language-level">Fluent</span>
+      <!-- LANGUAGES -->
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>Languages</h2>
+            <span class="label">02.5 — Spoken</span>
           </div>
-          <div class="language-item">
-            <span class="language-name">Tamil</span>
-            <span class="language-level">Native</span>
+          <div class="stack-2">
+            <div style="display:flex; justify-content:space-between; padding: 16px 0; border-bottom: 1px solid var(--hairline);">
+              <span class="text-mono text-upper">English</span>
+              <span class="text-mono text-upper" style="color:var(--forest);">Fluent</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding: 16px 0;">
+              <span class="text-mono text-upper">Tamil</span>
+              <span class="text-mono text-upper" style="color:var(--forest);">Native</span>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="leadership-section">
-      <div class="container">
-        <h2>Leadership & Experience</h2>
-        <div class="experience-card">
-          <h3>General Secretary (GS), Department of CSE</h3>
-          <h4>Government College of Technology, Coimbatore</h4>
-          <ul>
-            <li>Lead coordinator for all departmental events and inter-college tests</li>
-            <li>Head of community operations and student engagement initiatives</li>
-          </ul>
+      <!-- LEADERSHIP -->
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>Leadership &amp; Experience</h2>
+            <span class="label">02.6 — Roles</span>
+          </div>
+          <article class="testimonial">
+            <div class="stars" aria-label="5 star rating">
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <div class="quote-mark">&ldquo;</div>
+            <blockquote>
+              Lead coordinator for all departmental events and inter-college tests.
+              Head of community operations and student engagement initiatives.
+            </blockquote>
+            <footer>
+              <span class="avatar">KR</span>
+              <div class="who">
+                General Secretary (GS), Department of CSE
+                <small>Government College of Technology, Coimbatore</small>
+              </div>
+            </footer>
+          </article>
         </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; <span id="year"></span> Kavimugil Rajasekar. All rights reserved.</p>
+        <p class="mono-tag">Built with blueprint v2.0 // forest</p>
       </div>
-    </section>
-  </main>
+    </footer>
+  </div>
 
-  <footer>
-    <div class="container">
-      <p>&copy; <span id="year"></span> Kavimugil Rajasekar. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <script src="js/main.js"></script>
+  <script src="js/tubes.js" defer></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>

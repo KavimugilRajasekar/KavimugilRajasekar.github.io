@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Kavimugil Rajasekar's project portfolio - showcasing AI-powered chatbot, food ordering system, and USB security application. Explore my technical work in Flutter, Node.js, PHP, and C#.">
+  <meta name="description" content="Kavimugil Rajasekar's project portfolio — AI-powered chatbot, food ordering system, and USB security application. Flutter, Node.js, PHP, C#.">
   <meta name="keywords" content="Kavimugil Rajasekar, projects, portfolio, flutter projects, mobile development, web development, software projects">
   <meta name="author" content="Kavimugil Rajasekar">
   <meta property="og:title" content="Projects | Kavimugil Rajasekar">
-  <meta property="og:description" content="Project portfolio - AI chatbot, food ordering system, USB unlock application. Flutter, Node.js, PHP, C#.">
+  <meta property="og:description" content="Project portfolio — AI chatbot, food ordering system, USB unlock application. Flutter, Node.js, PHP, C#.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://KavimugilRajasekar.github.io/projects.html">
   <link rel="canonical" href="https://KavimugilRajasekar.github.io/projects.html">
@@ -15,148 +15,161 @@
   <meta name="twitter:title" content="Projects | Kavimugil Rajasekar">
   <meta name="twitter:description" content="Flutter, Node.js, PHP, C# projects.">
   <title>Projects | Kavimugil Rajasekar</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/projects.css">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com"    crossorigin>
+  <link rel="preconnect" href="https://api.fontshare.com"     crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=general-sans@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/blueprint.css">
+  <link rel="stylesheet" href="css/layout.css">
 </head>
 <body>
-  <header>
-    <nav>
-      <div class="nav-container">
-        <div class="nav-logo">
-          <a href="index.html">Kavimugil</a>
-        </div>
-        <div class="nav-menu" id="nav-menu">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="projects.html" class="active">Projects</a></li>
-            <li><a href="resume.html">Resume</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li>
-              <a href="bottle-art/index.html" class="bottle-icon-btn" id="bottle-mode-toggle" title="Bottle Art Mode">
-                <i class="fas fa-leaf"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="nav-toggle" id="nav-toggle">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+  <header class="site-header">
+    <div class="nav-row">
+      <a class="brand-logo" href="index.html" aria-label="Kavimugil — Home">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="12" y1="3" x2="12" y2="21"/></svg>
+      </a>
+      <nav class="nav-links" id="nav-links" aria-label="Primary">
+        <a href="index.html">01. Index</a>
+        <a href="about.html">02. About</a>
+        <a href="projects.html" class="active">03. Projects</a>
+        <a href="resume.html">04. Resume</a>
+        <a href="contact.html">05. Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn-ghost" href="resume.html">CV</a>
+        <a class="btn-solid" href="contact.html">Hire</a>
+        <a class="bottle-icon-btn" href="bottle-art/index.html" title="Bottle Art mode" aria-label="Switch to Bottle Art">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2C12 6 9 7 9 11c0 4 3 4 3 9 0 1-1 2-3 2M12 2c0 4 3 5 3 9 0 4-3 4-3 9 0 1 1 2 3 2M5 14c2 0 3 1 3 3M19 14c-2 0-3 1-3 3"/></svg>
+        </a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </div>
-    </nav>
+    </div>
   </header>
 
-  <main class="projects-main">
-    <section class="projects-hero">
-      <div class="container">
-        <h1>My Projects</h1>
-        <p>Explore my technical work and contributions</p>
-      </div>
-    </section>
+  <div class="page-shell">
+    <main>
+      <section class="page-title-block">
+        <div>
+          <span class="label">03 — Projects</span>
+          <h1>My Projects</h1>
+        </div>
+        <p>Explore my technical work and contributions.</p>
+      </section>
 
-    <section class="projects-section">
-      <div class="container">
-        <div class="project" id="shopping-assistant">
-          <div class="project-image">
-            <img src="assets/images/chatbot.png" alt="AI-Powered Shopping Assistant Chatbot interface screenshot" loading="lazy" onerror="this.style.display='none'">
-          </div>
-          <div class="project-details">
+      <!-- PROJECT 01 -->
+      <section class="section" id="shopping-assistant">
+        <div class="container">
+          <div class="section-head">
             <h2>AI-Powered Shopping Assistant Chatbot</h2>
-            <div class="project-meta">
-              <span class="project-date">2023</span>
-              <span class="project-category">Team Project</span>
+            <span class="label">03.1 — 2023 / Team</span>
+          </div>
+          <div class="grid-2" style="grid-template-columns: 1fr 1.5fr;">
+            <div>
+              <img class="blend-lum" src="assets/images/chatbot.png" alt="AI-Powered Shopping Assistant Chatbot interface screenshot" loading="lazy" onerror="this.style.display='none'">
+              <div class="tech-tags" style="margin-top:16px;">
+                <span class="tech-tag">Flutter</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">Database</span>
+              </div>
             </div>
-            <div class="project-tech">
-              <span>Flutter</span>
-              <span>Node.js</span>
-              <span>Database</span>
-            </div>
-            <p>Collaborated with a 5-member team to develop an AI-based customer service chatbot for e-commerce platforms. The chatbot helps users find products, answer queries, and provide personalized recommendations.</p>
-            <h3>My Contributions:</h3>
-            <ul>
-              <li>Handled database integration and management</li>
-              <li>Set up the deployment pipeline for the application</li>
-              <li>Conducted comprehensive QA testing</li>
-              <li>Collaborated on the UI/UX design</li>
-            </ul>
-            <div class="project-links">
-              <a href="https://github.com/ragavanperarasu/NM_AI-NLP_Chatbot" target="_blank" class="btn"><i class="fab fa-github"></i> View Code</a>
+            <div class="stack-3">
+              <span class="cell-label cell-label--coral">Contributions</span>
+              <p>Collaborated with a 5-member team to develop an AI-based customer service chatbot for e-commerce platforms. The chatbot helps users find products, answer queries, and provide personalized recommendations.</p>
+              <ul style="list-style:none; padding:0;" class="stack-2 text-mono">
+                <li style="border-bottom:1px solid var(--hairline); padding:8px 0;">// 01. Handled database integration and management</li>
+                <li style="border-bottom:1px solid var(--hairline); padding:8px 0;">// 02. Set up the deployment pipeline for the application</li>
+                <li style="border-bottom:1px solid var(--hairline); padding:8px 0;">// 03. Conducted comprehensive QA testing</li>
+                <li style="padding:8px 0;">// 04. Collaborated on the UI/UX design</li>
+              </ul>
+              <div>
+                <a class="btn-ghost" href="https://github.com/ragavanperarasu/NM_AI-NLP_Chatbot" target="_blank" rel="noreferrer">View code &rarr;</a>
+              </div>
             </div>
           </div>
         </div>
+      </section>
 
-        <div class="project" id="food-ordering">
-          <div class="project-image">
-            <img src="assets/images/food-ordering.png" alt="Online Food Ordering System interface screenshot" loading="lazy" onerror="this.style.display='none'">
-          </div>
-          <div class="project-details">
+      <!-- PROJECT 02 -->
+      <section class="section" id="food-ordering">
+        <div class="container">
+          <div class="section-head">
             <h2>Online Food Ordering and Login Web Application</h2>
-            <div class="project-meta">
-              <span class="project-date">2022</span>
-              <span class="project-category">Individual Project</span>
+            <span class="label">03.2 — 2022 / Individual</span>
+          </div>
+          <div class="grid-2" style="grid-template-columns: 1fr 1.5fr;">
+            <div>
+              <img class="blend-lum" src="assets/images/food-ordering.png" alt="Online Food Ordering System interface screenshot" loading="lazy" onerror="this.style.display='none'">
+              <div class="tech-tags" style="margin-top:16px;">
+                <span class="tech-tag">PHP</span>
+                <span class="tech-tag">MySQL</span>
+                <span class="tech-tag">Web Development</span>
+              </div>
             </div>
-            <div class="project-tech">
-              <span>PHP</span>
-              <span>MySQL</span>
-              <span>Web Development</span>
-            </div>
-            <p>Developed a comprehensive food ordering platform with user authentication, menu browsing, cart functionality, and admin panel for restaurant management.</p>
-            <h3>Key Features:</h3>
-            <ul>
-              <li>Secure user login and registration system</li>
-              <li>Interactive menu with categories and search</li>
-              <li>Shopping cart with order summary</li>
-              <li>Admin dashboard for managing orders and menu items</li>
-              <li>Responsive design for all devices</li>
-            </ul>
-            <div class="project-links">
-              <a href="https://github.com/KavimugilRajasekar/Food_Plaza" target="_blank" class="btn"><i class="fab fa-github"></i> View Code</a>
+            <div class="stack-3">
+              <span class="cell-label cell-label--mint">Key Features</span>
+              <p>Developed a comprehensive food ordering platform with user authentication, menu browsing, cart functionality, and admin panel for restaurant management.</p>
+              <ul style="list-style:none; padding:0;" class="stack-2 text-mono">
+                <li style="border-bottom:1px solid var(--hairline); padding:8px 0;">// 01. Secure user login and registration system</li>
+                <li style="border-bottom:1px solid var(--hairline); padding:8px 0;">// 02. Interactive menu with categories and search</li>
+                <li style="border-bottom:1px solid var(--hairline); padding:8px 0;">// 03. Shopping cart with order summary</li>
+                <li style="border-bottom:1px solid var(--hairline); padding:8px 0;">// 04. Admin dashboard for managing orders and menu items</li>
+                <li style="padding:8px 0;">// 05. Responsive design for all devices</li>
+              </ul>
+              <div>
+                <a class="btn-ghost" href="https://github.com/KavimugilRajasekar/Food_Plaza" target="_blank" rel="noreferrer">View code &rarr;</a>
+              </div>
             </div>
           </div>
         </div>
+      </section>
 
-        <div class="project" id="usb-unlock">
-          <div class="project-image">
-            <img src="assets/images/unlock.png" alt="USB-Unlock Application interface screenshot" loading="lazy" onerror="this.style.display='none'">
-          </div>
-          <div class="project-details">
+      <!-- PROJECT 03 -->
+      <section class="section" id="usb-unlock">
+        <div class="container">
+          <div class="section-head">
             <h2>USB-Unlock (Console and service based application)</h2>
-            <div class="project-meta">
-              <span class="project-date">2022</span>
-              <span class="project-category">Individual Project</span>
+            <span class="label">03.3 — 2022 / Individual</span>
+          </div>
+          <div class="grid-2" style="grid-template-columns: 1fr 1.5fr;">
+            <div>
+              <img class="blend-lum" src="assets/images/unlock.png" alt="USB-Unlock Application interface screenshot" loading="lazy" onerror="this.style.display='none'">
+              <div class="tech-tags" style="margin-top:16px;">
+                <span class="tech-tag">C#</span>
+                <span class="tech-tag">Windows Services</span>
+              </div>
             </div>
-            <div class="project-tech">
-              <span>C#</span>
-              <span>Windows Services</span>
-            </div>
-            <p>Developed a Windows-based application that provides security for USB drives by requiring authentication before allowing access to the drive contents.</p>
-            <h3>Technical Details:</h3>
-            <ul>
-              <li>Console application for initial setup and configuration</li>
-              <li>Windows service running in background to monitor USB connections</li>
-              <li>Simple and user-friendly interface</li>
-              <li>Windows platform exclusive</li>
-            </ul>
-            <div class="project-links">
-              <a href="https://github.com/KavimugilRajasekar/usbunlock" target="_blank" class="btn"><i class="fab fa-github"></i> View Code</a>
+            <div class="stack-3">
+              <span class="cell-label cell-label--gold">Technical Details</span>
+              <p>Developed a Windows-based application that provides security for USB drives by requiring authentication before allowing access to the drive contents.</p>
+              <ul style="list-style:none; padding:0;" class="stack-2 text-mono">
+                <li style="border-bottom:1px solid var(--hairline); padding:8px 0;">// 01. Console application for initial setup and configuration</li>
+                <li style="border-bottom:1px solid var(--hairline); padding:8px 0;">// 02. Windows service running in background to monitor USB connections</li>
+                <li style="border-bottom:1px solid var(--hairline); padding:8px 0;">// 03. Simple and user-friendly interface</li>
+                <li style="padding:8px 0;">// 04. Windows platform exclusive</li>
+              </ul>
+              <div>
+                <a class="btn-ghost" href="https://github.com/KavimugilRajasekar/usbunlock" target="_blank" rel="noreferrer">View code &rarr;</a>
+              </div>
             </div>
           </div>
         </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; <span id="year"></span> Kavimugil Rajasekar. All rights reserved.</p>
+        <p class="mono-tag">Built with blueprint v2.0 // forest</p>
       </div>
-    </section>
-  </main>
+    </footer>
+  </div>
 
-  <footer>
-    <div class="container">
-      <p>&copy; <span id="year"></span> Kavimugil Rajasekar. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <script src="js/main.js"></script>
+  <script src="js/tubes.js" defer></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>

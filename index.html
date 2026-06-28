@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Kavimugil Rajasekar - Computer Science Engineer & Flutter Developer. Portfolio showcasing projects, skills, and experience in mobile development, backend systems, and software engineering.">
+  <meta name="description" content="Kavimugil Rajasekar — Computer Science Engineer & Flutter Developer. Portfolio showcasing projects, skills, and experience in mobile development, backend systems, and software engineering.">
   <meta name="keywords" content="Kavimugil Rajasekar, portfolio, computer science, flutter developer, mobile development, software engineer">
   <meta name="author" content="Kavimugil Rajasekar">
   <meta property="og:title" content="Kavimugil Rajasekar | Portfolio">
@@ -17,91 +17,169 @@
   <meta name="twitter:description" content="Computer Science Engineer & Flutter Developer.">
   <meta name="twitter:image" content="https://raw.githubusercontent.com/KavimugilRajasekar/AssetsHosting/main/profile-preview.png">
   <title>Kavimugil Rajasekar | Portfolio</title>
-  <link rel="stylesheet" href="css/styles.css">
+
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com"    crossorigin>
+  <link rel="preconnect" href="https://api.fontshare.com"     crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=general-sans@400;500;600;700&display=swap">
+
+  <!-- Blueprint design system -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/blueprint.css">
+  <link rel="stylesheet" href="css/layout.css">
 </head>
 <body>
-  <header>
-    <nav>
-      <div class="nav-container">
-        <div class="nav-logo">
-          <a href="index.html">Kavimugil</a>
-        </div>
-        <div class="nav-menu" id="nav-menu">
-          <ul>
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="resume.html">Resume</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li>
-              <a href="bottle-art/index.html" class="bottle-icon-btn" id="bottle-mode-toggle" title="Bottle Art Mode">
-                <i class="fas fa-leaf"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="nav-toggle" id="nav-toggle">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+  <header class="site-header">
+    <div class="nav-row">
+      <a class="brand-logo" href="index.html" aria-label="Kavimugil — Home">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="12" y1="3" x2="12" y2="21"/>
+        </svg>
+      </a>
+      <nav class="nav-links" id="nav-links" aria-label="Primary">
+        <a href="index.html" class="active">01. Index</a>
+        <a href="about.html">02. About</a>
+        <a href="projects.html">03. Projects</a>
+        <a href="resume.html">04. Resume</a>
+        <a href="contact.html">05. Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn-ghost" href="resume.html">CV</a>
+        <a class="btn-solid" href="contact.html">Hire</a>
+        <a class="bottle-icon-btn" href="bottle-art/index.html" title="Bottle Art mode" aria-label="Switch to Bottle Art">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M12 2C12 6 9 7 9 11c0 4 3 4 3 9 0 1-1 2-3 2M12 2c0 4 3 5 3 9 0 4-3 4-3 9 0 1 1 2 3 2M5 14c2 0 3 1 3 3M19 14c-2 0-3 1-3 3"/>
+          </svg>
+        </a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </div>
-    </nav>
+    </div>
   </header>
 
-  <main class="hero">
-    <div class="hero-content">
-      <h1>Kavimugil Rajasekar</h1>
-      <h2>Computer Science Engineer & Flutter Developer</h2>
-      <p>Building innovative solutions to real-world problems</p>
-      <div class="social-links">
-        <a href="https://github.com/KavimugilRajasekar" target="_blank" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
-        <a href="https://www.linkedin.com/in/kavimugil-rajasekar-74463034b" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-        <a href="mailto:kavimugil28@gmail.com" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
-      </div>
-      <a href="projects.html" class="btn">View My Work</a>
-    </div>
-  </main>
-
-  <section class="quick-intro">
-    <div class="container">
-      <h2>About Me</h2>
-      <p>A highly motivated Computer Science undergraduate passionate about Flutter development and application testing. Currently pursuing my Bachelor's degree at Government College of Technology, Coimbatore.</p>
-      <a href="about.html" class="btn-outline">Learn More</a>
-    </div>
-  </section>
-
-  <section class="featured-projects">
-    <div class="container">
-      <h2>Featured Projects</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <h3>AI-Powered Shopping Assistant</h3>
-          <p>Flutter, Node.js team project where I handled database integration and testing.</p>
-          <a href="projects.html#shopping-assistant" class="btn-small">View Details</a>
+  <div class="page-shell">
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-content">
+          <span class="status-badge"><span class="dot"></span>Available for hire</span>
+          <h1>Kavimugil<br>Rajasekar</h1>
+          <p class="hero-sub">Computer Science Engineer &amp; Flutter Developer<br>Building innovative solutions to real-world problems</p>
+          <div class="hero-actions">
+            <a class="btn-solid" href="projects.html">View My Work</a>
+            <a class="btn-ghost" href="contact.html">Get In Touch</a>
+          </div>
+          <div class="social-row" aria-label="Social links">
+            <a href="https://github.com/KavimugilRajasekar" target="_blank" rel="noreferrer" aria-label="GitHub">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.6.5.5 5.6.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.7 2.7 1.2 3.4.9.1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2.9-.3 2-.4 3-.4s2 .1 3 .4c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.1.7.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.6 18.4.5 12 .5z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/kavimugil-rajasekar-74463034b" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2zM8 19H5V9h3v10zM6.5 7.5A1.7 1.7 0 1 1 6.5 4a1.7 1.7 0 0 1 0 3.5zM19 19h-3v-5.3c0-1.3-.5-2-1.5-2s-1.5.7-1.5 2V19h-3V9h3v1.3c.4-.7 1.3-1.5 2.7-1.5 2 0 3.3 1.2 3.3 3.7V19z"/></svg>
+            </a>
+            <a href="mailto:kavimugil28@gmail.com" aria-label="Email">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18v12H3z"/><polyline points="3,6 12,13 21,6"/></svg>
+            </a>
+          </div>
         </div>
-        <div class="project-card">
-          <h3>Online Food Ordering System</h3>
-          <p>PHP and MySQL web application with secure login and admin panel.</p>
-          <a href="projects.html#food-ordering" class="btn-small">View Details</a>
+        <div class="wireframe" aria-hidden="true">
+          <svg class="orbit-svg" viewBox="0 0 360 360">
+            <circle cx="180" cy="180" r="160" fill="none" stroke="#3A3A38" stroke-opacity="0.20" stroke-dasharray="3 4"/>
+            <circle cx="180" cy="180" r="120" fill="none" stroke="#3A3A38" stroke-opacity="0.20" stroke-dasharray="3 4"/>
+            <circle cx="180" cy="180" r="80"  fill="none" stroke="#3A3A38" stroke-opacity="0.30" stroke-dasharray="2 3"/>
+          </svg>
+          <span class="center-node"></span>
         </div>
+      </section>
+
+      <!-- ABOUT BENTO -->
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>About</h2>
+            <span class="label">01 — Snapshot</span>
+          </div>
+          <div class="bento">
+            <article class="cell">
+              <span class="cell-label cell-label--coral">01. Bio</span>
+              <h3>Computer Science undergraduate</h3>
+              <p>A highly motivated Computer Science undergraduate passionate about Flutter development and application testing. Currently pursuing my Bachelor's degree at Government College of Technology, Coimbatore.</p>
+              <div class="cell-actions">
+                <a class="btn-ghost" href="about.html">Learn more</a>
+              </div>
+            </article>
+            <article class="cell">
+              <span class="cell-label cell-label--mint">02. Focus</span>
+              <h3>Mobile &amp; backend systems</h3>
+              <div class="cell-mockup">
+<span class="chip">FLUTTER</span><span class="chip chip--mint">NODE</span><span class="chip chip--gold">PHP</span><span class="chip">SQL</span>
+Flutter mobile apps, REST backends, and integration testing — building end-to-end products that ship.
+              </div>
+              <div class="cell-actions">
+                <a class="btn-ghost" href="projects.html">See projects</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURED PROJECTS BENTO -->
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>Featured Projects</h2>
+            <span class="label">02 — Selected Work</span>
+          </div>
+          <div class="bento">
+            <article class="cell" id="shopping-assistant">
+              <span class="cell-label cell-label--coral">01. Flutter + Node.js</span>
+              <h3>AI-Powered Shopping Assistant</h3>
+              <p>Team project where I handled database integration and testing — a Flutter frontend paired with a Node.js backend, exposing a recommendation API.</p>
+              <div class="cell-mockup">
+status: <span class="chip">SHIPPED</span>
+stack:  flutter, node, postgres
+role:   db &amp; qa
+              </div>
+              <div class="cell-actions">
+                <a class="btn-ghost" href="projects.html#shopping-assistant">View details</a>
+              </div>
+            </article>
+            <article class="cell" id="food-ordering">
+              <span class="cell-label cell-label--gold">02. PHP + MySQL</span>
+              <h3>Online Food Ordering System</h3>
+              <p>PHP and MySQL web application with secure login, role-based admin panel, and a clean ordering flow built end-to-end.</p>
+              <div class="cell-mockup">
+status: <span class="chip chip--gold">SHIPPED</span>
+stack:  php, mysql, js
+role:   full-stack
+              </div>
+              <div class="cell-actions">
+                <a class="btn-ghost" href="projects.html#food-ordering">View details</a>
+              </div>
+            </article>
+          </div>
+          <div class="cell-actions" style="margin-top: 32px;">
+            <a class="btn-solid" href="projects.html">View all projects</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; <span id="year"></span> Kavimugil Rajasekar. All rights reserved.</p>
+        <p class="mono-tag">Built with blueprint v2.0 // forest</p>
       </div>
-      <a href="projects.html" class="btn">View All Projects</a>
-    </div>
-  </section>
+    </footer>
+  </div>
 
-  <footer>
-    <div class="container">
-      <p>&copy; <span id="year"></span> Kavimugil Rajasekar. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <script src="js/main.js"></script>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script src="js/tubes.js" defer></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>

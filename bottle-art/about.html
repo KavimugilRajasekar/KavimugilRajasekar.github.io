@@ -3,162 +3,178 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="About Bottle Art - Learn how Kavimugil transforms discarded brewery bottles into beautiful works of art.">
+  <meta name="description" content="About Bottle Art — Learn how Kavimugil transforms discarded brewery bottles into beautiful works of art.">
   <meta name="keywords" content="bottle art, upcycled art, about, creative process">
   <meta name="author" content="Kavimugil Rajasekar">
   <link rel="canonical" href="https://KavimugilRajasekar.github.io/bottle-art/about.html">
   <title>About | Bottle Art</title>
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/about.css">
   <link rel="icon" type="image/x-icon" href="../favicon.ico">
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com"    crossorigin>
+  <link rel="preconnect" href="https://api.fontshare.com"     crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=general-sans@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/blueprint.css">
+  <link rel="stylesheet" href="../css/layout.css">
 </head>
-<body class="bottle-theme">
-  <header>
-    <nav>
-      <div class="nav-container">
-        <div class="nav-logo">
-          <a href="index.html">Kavimugil</a>
-        </div>
-        <div class="nav-menu" id="nav-menu">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html" class="active">About</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="contact.html">Social Media</a></li>
-            <li>
-              <a href="../index.html" class="bottle-icon-btn" id="bottle-mode-toggle" title="Back to Portfolio">
-                <i class="fas fa-briefcase"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="nav-toggle" id="nav-toggle">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+<body>
+  <header class="site-header">
+    <div class="nav-row">
+      <a class="brand-logo" href="index.html" aria-label="Bottle Art — Home">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="12" y1="3" x2="12" y2="21"/></svg>
+      </a>
+      <nav class="nav-links" id="nav-links" aria-label="Primary">
+        <a href="index.html">01. Index</a>
+        <a href="about.html" class="active">02. About</a>
+        <a href="gallery.html">03. Gallery</a>
+        <a href="contact.html">04. Social</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn-ghost" href="gallery.html">Gallery</a>
+        <a class="btn-solid" href="contact.html">Follow</a>
+        <a class="bottle-icon-btn" href="../index.html" title="Back to Portfolio" aria-label="Back to Portfolio">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="1"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></svg>
+        </a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </div>
-    </nav>
+    </div>
   </header>
 
-  <main class="about-main">
-    <section class="page-hero">
+  <div class="page-shell">
+    <main>
+      <section class="page-title-block">
+        <div>
+          <span class="label">02 — About the Art</span>
+          <h1>About My Art</h1>
+        </div>
+        <p>From roadside discarded to gallery-worthy.</p>
+      </section>
+
+      <!-- STORY -->
+      <section class="section">
+        <div class="container">
+          <div class="grid-2">
+            <div class="stack-3">
+              <span class="cell-label cell-label--coral">02.1 — Story</span>
+              <h2>The Journey of a Bottle</h2>
+              <p>Every piece in this collection begins its journey on the sides of roads — discarded, forgotten, and left to shatter. I collect these discarded brewery bottles and transform them into unique works of art.</p>
+              <p>Each bottle is carefully cleaned, sanitized, and examined for its unique shape, color, and character. Then through painting, etching, cutting, and assembling, I give each one a new purpose and a new story to tell.</p>
+              <p>This isn't just art — it's a statement about sustainability, creativity, and finding beauty in what others throw away.</p>
+            </div>
+            <div>
+              <div class="wireframe" aria-hidden="true" style="max-width: 320px;">
+                <svg class="orbit-svg" viewBox="0 0 360 360">
+                  <circle cx="180" cy="180" r="160" fill="none" stroke="#3A3A38" stroke-opacity="0.20" stroke-dasharray="3 4"/>
+                  <circle cx="180" cy="180" r="120" fill="none" stroke="#3A3A38" stroke-opacity="0.20" stroke-dasharray="3 4"/>
+                </svg>
+                <span class="center-node"></span>
+                <svg style="position:relative; z-index:1; width:50%; height:50%; color:var(--forest);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path d="M10 2h4v4l1 3v11a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2V9l1-3V2z"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PHILOSOPHY -->
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>My Philosophy</h2>
+            <span class="label">02.2 — Values</span>
+          </div>
+          <div class="bento bento-3">
+            <article class="cell">
+              <span class="cell-label cell-label--mint">01. Eco</span>
+              <h3>Eco-Conscious</h3>
+              <p>Every piece repurposes glass that would otherwise litter our roadsides and landfills, giving discarded bottles a second life as stunning art.</p>
+            </article>
+            <article class="cell">
+              <span class="cell-label cell-label--coral">02. Craft</span>
+              <h3>Handcrafted</h3>
+              <p>Each artwork is meticulously cleaned, designed, and transformed by hand, preserving the natural beauty and character of the original bottle.</p>
+            </article>
+            <article class="cell">
+              <span class="cell-label cell-label--gold">03. Story</span>
+              <h3>Unique Stories</h3>
+              <p>No two bottles are alike, and neither are the artworks. Each piece carries the history of its origin — the brewery, the road, the journey.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROCESS TIMELINE -->
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>The Creative Process</h2>
+            <span class="label">02.3 — Sequence</span>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <span class="timeline-date">Step 01</span>
+              <div class="timeline-content">
+                <span class="status-badge"><span class="dot"></span>Collection</span>
+                <h3 style="margin-top:8px;">Bottles are carefully collected from roadsides</h3>
+                <p>Ensuring they are properly cleaned and sanitized before use.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-date">Step 02</span>
+              <div class="timeline-content">
+                <span class="status-badge status-badge--mint"><span class="dot"></span>Design</span>
+                <h3 style="margin-top:8px;">Each bottle is examined</h3>
+                <p>For its unique shape, color, and texture to determine the best artistic approach.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-date">Step 03</span>
+              <div class="timeline-content">
+                <span class="status-badge status-badge--gold"><span class="dot"></span>Transformation</span>
+                <h3 style="margin-top:8px;">Using various techniques</h3>
+                <p>Painting, etching, cutting, and assembling — the bottle begins its artistic journey.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-date">Step 04</span>
+              <div class="timeline-content">
+                <span class="status-badge"><span class="dot"></span>Completion</span>
+                <h3 style="margin-top:8px;">The final piece is finished</h3>
+                <p>With attention to detail, ensuring it is both beautiful and meaningful.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section">
+        <div class="container">
+          <div class="cta-form" style="text-align:center;">
+            <span class="corner tl"></span><span class="corner tr"></span>
+            <span class="corner bl"></span><span class="corner br"></span>
+            <span class="cell-label cell-label--coral" style="justify-content:center;">See the work</span>
+            <h2>Want to See the Art?</h2>
+            <p>Explore the complete gallery of bottle art creations.</p>
+            <a class="btn-solid" href="gallery.html">View Gallery</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
       <div class="container">
-        <h1>About My Art</h1>
-        <p>From roadside discarded to gallery-worthy</p>
+        <p>&copy; <span id="year"></span> Kavimugil Rajasekar. All rights reserved.</p>
+        <p class="mono-tag">Turning waste into wonder, one bottle at a time // blueprint v2.0</p>
       </div>
-    </section>
+    </footer>
+  </div>
 
-    <section class="story-section">
-      <div class="container">
-        <div class="story-grid">
-          <div class="story-text">
-            <h2>The Journey of a Bottle</h2>
-            <p>Every piece in this collection begins its journey on the sides of roads — discarded, forgotten, and left to shatter. I collect these discarded brewery bottles and transform them into unique works of art.</p>
-            <p>Each bottle is carefully cleaned, sanitized, and examined for its unique shape, color, and character. Then through painting, etching, cutting, and assembling, I give each one a new purpose and a new story to tell.</p>
-            <p>This isn't just art — it's a statement about sustainability, creativity, and finding beauty in what others throw away.</p>
-          </div>
-          <div class="story-visual">
-            <div class="bottle-illustration">
-              <i class="fas fa-wine-bottle"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="philosophy-section">
-      <div class="container">
-        <div class="section-header">
-          <h2>My Philosophy</h2>
-          <p>The values behind each creation</p>
-        </div>
-        <div class="philosophy-grid">
-          <div class="philosophy-card">
-            <div class="philosophy-icon">
-              <i class="fas fa-recycle"></i>
-            </div>
-            <h3>Eco-Conscious</h3>
-            <p>Every piece repurposes glass that would otherwise litter our roadsides and landfills, giving discarded bottles a second life as stunning art.</p>
-          </div>
-          <div class="philosophy-card">
-            <div class="philosophy-icon">
-              <i class="fas fa-hand-holding-heart"></i>
-            </div>
-            <h3>Handcrafted</h3>
-            <p>Each artwork is meticulously cleaned, designed, and transformed by hand, preserving the natural beauty and character of the original bottle.</p>
-          </div>
-          <div class="philosophy-card">
-            <div class="philosophy-icon">
-              <i class="fas fa-gem"></i>
-            </div>
-            <h3>Unique Stories</h3>
-            <p>No two bottles are alike, and neither are the artworks. Each piece carries the history of its origin — the brewery, the road, the journey.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="process-section">
-      <div class="container">
-        <div class="section-header">
-          <h2>The Creative Process</h2>
-          <p>How each bottle transforms into art</p>
-        </div>
-
-        <div class="process-timeline">
-          <div class="process-step">
-            <div class="step-number">01</div>
-            <div class="step-content">
-              <h3>Collection</h3>
-              <p>Bottles are carefully collected from roadsides, ensuring they are properly cleaned and sanitized before use.</p>
-            </div>
-          </div>
-          <div class="process-step">
-            <div class="step-number">02</div>
-            <div class="step-content">
-              <h3>Design</h3>
-              <p>Each bottle is examined for its unique shape, color, and texture to determine the best artistic approach.</p>
-            </div>
-          </div>
-          <div class="process-step">
-            <div class="step-number">03</div>
-            <div class="step-content">
-              <h3>Transformation</h3>
-              <p>Using various techniques — painting, etching, cutting, and assembling — the bottle begins its artistic journey.</p>
-            </div>
-          </div>
-          <div class="process-step">
-            <div class="step-number">04</div>
-            <div class="step-content">
-              <h3>Completion</h3>
-              <p>The final piece is finished with attention to detail, ensuring it is both beautiful and meaningful.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta-section">
-      <div class="container">
-        <div class="cta-content">
-          <h2>Want to See the Art?</h2>
-          <p>Explore the complete gallery of bottle art creations.</p>
-          <a href="gallery.html" class="btn-bottle">View Gallery</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="bottle-footer">
-    <div class="container">
-      <p>&copy; <span id="year"></span> Kavimugil Rajasekar. All rights reserved.</p>
-      <p class="footer-tagline">Turning waste into wonder, one bottle at a time.</p>
-    </div>
-  </footer>
-
-  <script src="../js/main.js"></script>
+  <script src="../js/tubes.js" defer></script>
+  <script src="../js/main.js" defer></script>
 </body>
 </html>

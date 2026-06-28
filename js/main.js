@@ -1,47 +1,42 @@
-// ================================================
-// Main JavaScript - Portfolio & Bottle Art
-// ================================================
+/* ============================================================
+   main.js — Site scripting (nav toggle, dynamic year).
+   Tubes cursor logic lives in tubes.js.
+   ============================================================ */
+(function () {
+  'use strict';
 
-function attachMenuListeners() {
-  const toggle = document.getElementById('nav-toggle');
-  const menu = document.getElementById('nav-menu');
-  if (!toggle || !menu) return;
+  function attachNavToggle() {
+    var toggle = document.getElementById('nav-toggle');
+    var links  = document.getElementById('nav-links');
+    if (!toggle || !links) return;
 
-  toggle.addEventListener('click', () => {
-    menu.classList.toggle('active');
-    toggle.classList.toggle('active');
-  });
-
-  menu.querySelectorAll('ul li a').forEach(link => {
-    link.addEventListener('click', () => {
-      menu.classList.remove('active');
-      toggle.classList.remove('active');
+    toggle.addEventListener('click', function () {
+      var open = links.classList.toggle('is-open');
+      toggle.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
-  });
-}
 
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const targetId = this.getAttribute('href');
-    if (targetId === '#') return;
-    const targetElement = document.querySelector(targetId);
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: 'smooth' });
-    }
-  });
-});
-
-// Initialize on DOM ready
-document.addEventListener('DOMContentLoaded', function() {
-  attachMenuListeners();
-});
-
-// Dynamic year in footer
-document.addEventListener('DOMContentLoaded', function() {
-  const yearEl = document.getElementById('year');
-  if (yearEl) {
-    yearEl.textContent = new Date().getFullYear();
+    links.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        links.classList.remove('is-open');
+        toggle.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
   }
-});
+
+  function setYear() {
+    var y = document.getElementById('year');
+    if (y) y.textContent = new Date().getFullYear();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function () {
+      attachNavToggle();
+      setYear();
+    });
+  } else {
+    attachNavToggle();
+    setYear();
+  }
+})();

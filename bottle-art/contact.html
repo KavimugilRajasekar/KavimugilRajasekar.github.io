@@ -3,127 +3,136 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Connect with Kavimugil's Bottle Art - Follow on social media to see my artistic journey.">
+  <meta name="description" content="Connect with Kavimugil's Bottle Art — Follow on social media to see my artistic journey.">
   <meta name="keywords" content="bottle art, social media, instagram, connect">
   <meta name="author" content="Kavimugil Rajasekar">
   <link rel="canonical" href="https://KavimugilRajasekar.github.io/bottle-art/contact.html">
   <title>Social Media | Bottle Art</title>
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/contact.css">
   <link rel="icon" type="image/x-icon" href="../favicon.ico">
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com"    crossorigin>
+  <link rel="preconnect" href="https://api.fontshare.com"     crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=general-sans@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/blueprint.css">
+  <link rel="stylesheet" href="../css/layout.css">
 </head>
-<body class="bottle-theme">
-  <header>
-    <nav>
-      <div class="nav-container">
-        <div class="nav-logo">
-          <a href="index.html">Kavimugil</a>
-        </div>
-        <div class="nav-menu" id="nav-menu">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="contact.html" class="active">Social Media</a></li>
-            <li>
-              <a href="../index.html" class="bottle-icon-btn" id="bottle-mode-toggle" title="Back to Portfolio">
-                <i class="fas fa-briefcase"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="nav-toggle" id="nav-toggle">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+<body>
+  <header class="site-header">
+    <div class="nav-row">
+      <a class="brand-logo" href="index.html" aria-label="Bottle Art — Home">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="12" y1="3" x2="12" y2="21"/></svg>
+      </a>
+      <nav class="nav-links" id="nav-links" aria-label="Primary">
+        <a href="index.html">01. Index</a>
+        <a href="about.html">02. About</a>
+        <a href="gallery.html">03. Gallery</a>
+        <a href="contact.html" class="active">04. Social</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn-ghost" href="gallery.html">Gallery</a>
+        <a class="btn-solid" href="contact.html">Follow</a>
+        <a class="bottle-icon-btn" href="../index.html" title="Back to Portfolio" aria-label="Back to Portfolio">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="1"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></svg>
+        </a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </div>
-    </nav>
+    </div>
   </header>
 
-  <main class="contact-main">
-    <section class="page-hero">
-      <div class="container">
-        <h1>Connect With Me</h1>
-        <p>Follow my artistic journey on social media</p>
-      </div>
-    </section>
-
-    <section class="social-section">
-      <div class="container">
-        <div class="social-grid">
-          <a href="https://www.instagram.com/kavimugilrajasekar/" target="_blank" class="social-card instagram">
-            <div class="social-icon">
-              <i class="fab fa-instagram"></i>
-            </div>
-            <h3>Instagram</h3>
-            <p>Follow my art journey</p>
-            <span class="social-handle">@kavimugilrajasekar</span>
-          </a>
-          <a href="https://github.com/KavimugilRajasekar" target="_blank" class="social-card github">
-            <div class="social-icon">
-              <i class="fab fa-github"></i>
-            </div>
-            <h3>GitHub</h3>
-            <p>View my repositories</p>
-            <span class="social-handle">@KavimugilRajasekar</span>
-          </a>
-          <a href="https://www.linkedin.com/in/kavimugil-rajasekar-74463034b" target="_blank" class="social-card linkedin">
-            <div class="social-icon">
-              <i class="fab fa-linkedin"></i>
-            </div>
-            <h3>LinkedIn</h3>
-            <p>Let's connect</p>
-            <span class="social-handle">Kavimugil Rajasekar</span>
-          </a>
-          <a href="mailto:kavimugil28@gmail.com" class="social-card email">
-            <div class="social-icon">
-              <i class="fas fa-envelope"></i>
-            </div>
-            <h3>Email</h3>
-            <p>Get in touch</p>
-            <span class="social-handle">kavimugil28@gmail.com</span>
-          </a>
+  <div class="page-shell">
+    <main>
+      <section class="page-title-block">
+        <div>
+          <span class="label">04 — Social</span>
+          <h1>Connect With Me</h1>
         </div>
-      </div>
-    </section>
+        <p>Follow my artistic journey on social media.</p>
+      </section>
 
-    <section class="message-section">
-      <div class="container">
-        <div class="message-content">
-          <h2>Interested in Owning a Piece?</h2>
-          <p>Whether you're interested in commissioning a custom piece, collaborating, or just want to say hello — I'd love to hear from you. Each artwork is unique, just like the bottles they're made from.</p>
-          <div class="message-cta">
-            <a href="mailto:kavimugil28@gmail.com?subject=Bottle Art Inquiry" class="btn-bottle">
-              <i class="fas fa-envelope"></i> Send Message
+      <!-- SOCIAL BENTO -->
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>Channels</h2>
+            <span class="label">04.1 — Follow</span>
+          </div>
+          <div class="bento">
+            <a href="https://www.instagram.com/kavimugilrajasekar/" target="_blank" rel="noreferrer" class="cell" style="text-decoration:none;">
+              <span class="cell-label cell-label--coral">01. Instagram</span>
+              <h3>Instagram</h3>
+              <p>Follow my art journey</p>
+              <span class="tech-tag">@kavimugilrajasekar</span>
+            </a>
+            <a href="https://github.com/KavimugilRajasekar" target="_blank" rel="noreferrer" class="cell" style="text-decoration:none;">
+              <span class="cell-label cell-label--mint">02. GitHub</span>
+              <h3>GitHub</h3>
+              <p>View my repositories</p>
+              <span class="tech-tag">@KavimugilRajasekar</span>
+            </a>
+            <a href="https://www.linkedin.com/in/kavimugil-rajasekar-74463034b" target="_blank" rel="noreferrer" class="cell" style="text-decoration:none;">
+              <span class="cell-label cell-label--gold">03. LinkedIn</span>
+              <h3>LinkedIn</h3>
+              <p>Let's connect</p>
+              <span class="tech-tag">Kavimugil Rajasekar</span>
+            </a>
+            <a href="mailto:kavimugil28@gmail.com" class="cell" style="text-decoration:none;">
+              <span class="cell-label cell-label--coral">04. Email</span>
+              <h3>Email</h3>
+              <p>Get in touch</p>
+              <span class="tech-tag">kavimugil28@gmail.com</span>
             </a>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="cta-section">
-      <div class="container">
-        <div class="cta-content">
-          <h2>Back to Main Portfolio</h2>
-          <p>Want to see more of my work? Check out my technical projects and skills.</p>
-          <a href="#" class="btn-bottle-outline" id="back-to-portfolio">
-            <i class="fas fa-arrow-left"></i> Return to Portfolio
-          </a>
+      <!-- CTA -->
+      <section class="section">
+        <div class="container">
+          <div class="cta-form" style="text-align:center;">
+            <span class="corner tl"></span><span class="corner tr"></span>
+            <span class="corner bl"></span><span class="corner br"></span>
+            <span class="cell-label cell-label--mint" style="justify-content:center;">Interested in owning a piece</span>
+            <h2>Send a Message</h2>
+            <p>Whether you're interested in commissioning a custom piece, collaborating, or just want to say hello — I'd love to hear from you. Each artwork is unique, just like the bottles they're made from.</p>
+            <a class="btn-solid" href="mailto:kavimugil28@gmail.com?subject=Bottle%20Art%20Inquiry">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18v12H3z"/><polyline points="3,6 12,13 21,6"/></svg>
+              Send Message
+            </a>
+          </div>
         </div>
+      </section>
+
+      <!-- BACK TO PORTFOLIO -->
+      <section class="section">
+        <div class="container">
+          <div class="cta-form" style="text-align:center;">
+            <span class="corner tl"></span><span class="corner tr"></span>
+            <span class="corner bl"></span><span class="corner br"></span>
+            <span class="cell-label cell-label--gold" style="justify-content:center;">Switch context</span>
+            <h2>Back to Main Portfolio</h2>
+            <p>Want to see more of my work? Check out my technical projects and skills.</p>
+            <a class="btn-ghost" href="../index.html">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="15,18 9,12 15,6"/></svg>
+              Return to Portfolio
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; <span id="year"></span> Kavimugil Rajasekar. All rights reserved.</p>
+        <p class="mono-tag">Turning waste into wonder, one bottle at a time // blueprint v2.0</p>
       </div>
-    </section>
-  </main>
+    </footer>
+  </div>
 
-  <footer class="bottle-footer">
-    <div class="container">
-      <p>&copy; <span id="year"></span> Kavimugil Rajasekar. All rights reserved.</p>
-      <p class="footer-tagline">Turning waste into wonder, one bottle at a time.</p>
-    </div>
-  </footer>
-
-  <script src="../js/main.js"></script>
+  <script src="../js/tubes.js" defer></script>
+  <script src="../js/main.js" defer></script>
 </body>
 </html>

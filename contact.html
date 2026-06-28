@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Contact Kavimugil Rajasekar - Computer Science Engineer & Flutter Developer. Get in touch for collaborations, projects, or just to say hello.">
+  <meta name="description" content="Contact Kavimugil Rajasekar — Computer Science Engineer & Flutter Developer. Get in touch for collaborations, projects, or just to say hello.">
   <meta name="keywords" content="Kavimugil Rajasekar, contact, get in touch, email, phone, social media">
   <meta name="author" content="Kavimugil Rajasekar">
   <meta property="og:title" content="Contact | Kavimugil Rajasekar">
@@ -15,110 +15,153 @@
   <meta name="twitter:title" content="Contact | Kavimugil Rajasekar">
   <meta name="twitter:description" content="Get in touch with Kavimugil Rajasekar.">
   <title>Contact | Kavimugil Rajasekar</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/contact.css">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com"    crossorigin>
+  <link rel="preconnect" href="https://api.fontshare.com"     crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=general-sans@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/blueprint.css">
+  <link rel="stylesheet" href="css/layout.css">
 </head>
 <body>
-  <header>
-    <nav>
-      <div class="nav-container">
-        <div class="nav-logo">
-          <a href="index.html">Kavimugil</a>
-        </div>
-        <div class="nav-menu" id="nav-menu">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="resume.html">Resume</a></li>
-            <li><a href="contact.html" class="active">Contact</a></li>
-            <li>
-              <a href="bottle-art/index.html" class="bottle-icon-btn" id="bottle-mode-toggle" title="Bottle Art Mode">
-                <i class="fas fa-leaf"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="nav-toggle" id="nav-toggle">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+  <header class="site-header">
+    <div class="nav-row">
+      <a class="brand-logo" href="index.html" aria-label="Kavimugil — Home">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="12" y1="3" x2="12" y2="21"/></svg>
+      </a>
+      <nav class="nav-links" id="nav-links" aria-label="Primary">
+        <a href="index.html">01. Index</a>
+        <a href="about.html">02. About</a>
+        <a href="projects.html">03. Projects</a>
+        <a href="resume.html">04. Resume</a>
+        <a href="contact.html" class="active">05. Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn-ghost" href="resume.html">CV</a>
+        <a class="btn-solid" href="contact.html">Hire</a>
+        <a class="bottle-icon-btn" href="bottle-art/index.html" title="Bottle Art mode" aria-label="Switch to Bottle Art">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2C12 6 9 7 9 11c0 4 3 4 3 9 0 1-1 2-3 2M12 2c0 4 3 5 3 9 0 4-3 4-3 9 0 1 1 2 3 2M5 14c2 0 3 1 3 3M19 14c-2 0-3 1-3 3"/></svg>
+        </a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </div>
-    </nav>
+    </div>
   </header>
 
-  <main class="contact-main">
-    <section class="contact-hero">
-      <div class="container">
-        <h1>Get In Touch</h1>
-        <p>I'd love to hear from you! Feel free to reach out for collaborations or just to say hello.</p>
-      </div>
-    </section>
-
-    <section class="contact-section">
-      <div class="container">
-        <div class="contact-grid">
-          <div class="contact-info">
-            <h2>Contact Information</h2>
-            <div class="info-item">
-              <i class="fas fa-phone" aria-hidden="true"></i>
-              <div>
-                <h3>Phone</h3>
-                <p>+91 75503 47146</p>
-              </div>
-            </div>
-            <div class="info-item">
-              <i class="fas fa-envelope" aria-hidden="true"></i>
-              <div>
-                <h3>Email</h3>
-                <p>kavimugil28@gmail.com</p>
-              </div>
-            </div>
-            <div class="info-item">
-              <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-              <div>
-                <h3>Location</h3>
-                <p>Dharmapuri, Tamil Nadu, India</p>
-              </div>
-            </div>
-            <div class="social-links">
-              <a href="https://github.com/KavimugilRajasekar" target="_blank" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
-              <a href="https://www.linkedin.com/in/kavimugil-rajasekar-74463034b" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-              <a href="mailto:kavimugil28@gmail.com" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
-            </div>
-          </div>
-
-          <div class="contact-form">
-            <h2 id="contact-heading">Send Me a Message</h2>
-            <p>The fastest way to reach me is via email:</p>
-            <div class="contact-cta">
-              <a href="mailto:kavimugil28@gmail.com?subject=Contact%20from%20your%20portfolio%20website" class="btn"><i class="fas fa-envelope"></i> Send Email</a>
-            </div>
-            <p class="contact-alt">Or reach out directly at <a href="mailto:kavimugil28@gmail.com">kavimugil28@gmail.com</a></p>
-          </div>
-      </div>
-    </section>
-
-    <section class="map-section">
-      <div class="container">
-        <h2>Location</h2>
-        <div class="map-container">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39126.5!2d78.16!3d12.13!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDA3JzQ4LjAiTiA3OMKwMDknMzAuMCJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <div class="page-shell">
+    <main>
+      <section class="page-title-block">
+        <div>
+          <span class="label">05 — Contact</span>
+          <h1>Get In Touch</h1>
         </div>
+        <p>I'd love to hear from you! Feel free to reach out for collaborations or just to say hello.</p>
+      </section>
+
+      <!-- CONTACT BENTO -->
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>Channels</h2>
+            <span class="label">05.1 — Reach Me</span>
+          </div>
+          <div class="bento">
+            <article class="cell">
+              <span class="cell-label cell-label--coral">01. Phone</span>
+              <h3>+91 75503 47146</h3>
+              <p>Direct line — fastest for urgent inquiries.</p>
+            </article>
+            <article class="cell">
+              <span class="cell-label cell-label--mint">02. Email</span>
+              <h3>kavimugil28@gmail.com</h3>
+              <p>Best for project briefs, code reviews, or general questions.</p>
+              <div class="social-row">
+                <a href="mailto:kavimugil28@gmail.com" aria-label="Email">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18v12H3z"/><polyline points="3,6 12,13 21,6"/></svg>
+                </a>
+              </div>
+            </article>
+            <article class="cell">
+              <span class="cell-label cell-label--gold">03. Location</span>
+              <h3>Dharmapuri, Tamil Nadu, India</h3>
+              <p>Open to remote collaboration across time zones.</p>
+            </article>
+            <article class="cell">
+              <span class="cell-label cell-label--coral">04. Social</span>
+              <h3>GitHub / LinkedIn</h3>
+              <p>Follow for code samples and updates.</p>
+              <div class="social-row">
+                <a href="https://github.com/KavimugilRajasekar" target="_blank" rel="noreferrer" aria-label="GitHub">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.6.5.5 5.6.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.7 2.7 1.2 3.4.9.1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2.9-.3 2-.4 3-.4s2 .1 3 .4c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.1.7.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.6 18.4.5 12 .5z"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/kavimugil-rajasekar-74463034b" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2zM8 19H5V9h3v10zM6.5 7.5A1.7 1.7 0 1 1 6.5 4a1.7 1.7 0 0 1 0 3.5zM19 19h-3v-5.3c0-1.3-.5-2-1.5-2s-1.5.7-1.5 2V19h-3V9h3v1.3c.4-.7 1.3-1.5 2.7-1.5 2 0 3.3 1.2 3.3 3.7V19z"/></svg>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA FORM -->
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>Send a Message</h2>
+            <span class="label">05.2 — Compose</span>
+          </div>
+          <div class="cta-form">
+            <span class="corner tl"></span><span class="corner tr"></span>
+            <span class="corner bl"></span><span class="corner br"></span>
+            <h2 id="contact-heading">Reach me by email</h2>
+            <p>The fastest way to reach me is via email. The form below mirrors the same intent.</p>
+            <div class="form-field">
+              <label for="cf-name">Name</label>
+              <input id="cf-name" type="text" placeholder="Your name">
+            </div>
+            <div class="form-field">
+              <label for="cf-email">Email</label>
+              <input id="cf-email" type="email" placeholder="you@example.com">
+            </div>
+            <div class="form-field">
+              <label for="cf-msg">Message</label>
+              <textarea id="cf-msg" rows="4" placeholder="What's on your mind?"></textarea>
+            </div>
+            <a class="btn-solid" href="mailto:kavimugil28@gmail.com?subject=Contact%20from%20your%20portfolio%20website">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18v12H3z"/><polyline points="3,6 12,13 21,6"/></svg>
+              Send Email
+            </a>
+            <p class="text-mono text-upper" style="margin-top:24px;">Or reach out directly at <a href="mailto:kavimugil28@gmail.com" style="color:var(--forest); border-bottom: 1px solid var(--forest);">kavimugil28@gmail.com</a></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- MAP -->
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>Location</h2>
+            <span class="label">05.3 — Map</span>
+          </div>
+          <div style="border: 1px solid var(--hairline); padding: 8px;">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39126.5!2d78.16!3d12.13!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDA3JzQ4LjAiTiA3OMKwMDknMzAuMCJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="360" style="border:0; display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Location map of Dharmapuri, Tamil Nadu"></iframe>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; <span id="year"></span> Kavimugil Rajasekar. All rights reserved.</p>
+        <p class="mono-tag">Built with blueprint v2.0 // forest</p>
       </div>
-    </section>
-  </main>
+    </footer>
+  </div>
 
-  <footer>
-    <div class="container">
-      <p>&copy; <span id="year"></span> Kavimugil Rajasekar. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <script src="js/main.js"></script>
+  <script src="js/tubes.js" defer></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>
