@@ -331,7 +331,7 @@
     }
 
     function updateZoomDisplay() {
-      var zoomPercent = Math.round((currentScale / 1.5) * 100);
+      var zoomPercent = Math.round((currentScale / 3) * 100);
       document.getElementById('zoom-level').textContent = zoomPercent + '%';
     }
 
@@ -359,7 +359,7 @@
     }
 
     function resetZoom() {
-      currentScale = 1.5;
+      currentScale = 3;
       zoomPDF(0); // This will re-render at current scale
     }
 
