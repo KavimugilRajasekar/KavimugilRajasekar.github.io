@@ -143,8 +143,42 @@ body::before {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: width .35s ease, padding .35s ease;
 }
 .brand-logo svg { color: inherit; }
+
+/* On non-index pages, the icon slides out and the name slides in.
+   Driven by .brand-logo.is-name (toggled from main.js). */
+.brand-logo.is-name {
+  width: auto;
+  padding: 0 14px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono-xs);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-mono);
+}
+.brand-logo.is-name svg {
+  max-width: 0;
+  opacity: 0;
+  transition: max-width .25s ease, opacity .2s ease;
+}
+.brand-logo.is-name .brand-name {
+  display: inline-block;
+  max-width: 240px;
+  opacity: 1;
+  transform: translateX(0);
+  transition: max-width .35s ease .15s, opacity .25s ease .2s, transform .35s ease .15s;
+}
+.brand-logo .brand-name {
+  display: inline-block;
+  max-width: 0;
+  opacity: 0;
+  transform: translateX(-8px);
+  overflow: hidden;
+}
 
 .nav-links {
   display: flex;
@@ -229,6 +263,72 @@ body::before {
 .bottle-icon-btn:focus-visible {
   background: var(--grid);
   border-color: var(--grid);
+}
+
+/* Bottle Art link is in development: prevent navigation and surface a
+   custom tooltip instead of the native title. Scoped to outgoing links
+   (those pointing INTO bottle-art/), not the back-link from bottle-art
+   pages back to the portfolio. */
+.bottle-icon-btn[href$="bottle-art/index.html"],
+.bottle-icon-btn[href$="bottle-art/"] {
+  cursor: not-allowed;
+  position: relative;
+}
+.bottle-icon-btn[href$="bottle-art/index.html"]:hover,
+.bottle-icon-btn[href$="bottle-art/index.html"]:focus-visible,
+.bottle-icon-btn[href$="bottle-art/"]:hover,
+.bottle-icon-btn[href$="bottle-art/"]:focus-visible {
+  background: var(--coral);
+  border-color: var(--coral);
+}
+
+/* Tooltip bubble shown via .is-open class (toggled in main.js) */
+.dev-tooltip {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  background: var(--paper);
+  color: var(--forest);
+  border: 1px solid var(--forest);
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono-xs);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-mono);
+  line-height: 1.4;
+  white-space: nowrap;
+  max-width: 280px;
+  white-space: normal;
+  box-shadow: 0 4px 16px rgba(58, 58, 56, 0.12);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-4px);
+  transition: opacity .2s ease, transform .2s ease;
+  z-index: 200;
+}
+.dev-tooltip::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  right: 12px;
+  width: 10px;
+  height: 10px;
+  background: var(--paper);
+  border-top: 1px solid var(--forest);
+  border-left: 1px solid var(--forest);
+  transform: rotate(45deg);
+}
+.dev-tooltip.is-open {
+  opacity: 1;
+  transform: translateY(0);
+}
+.dev-tooltip strong {
+  display: block;
+  color: var(--coral);
+  font-weight: 700;
+  margin-bottom: 2px;
 }
 
 /* Mobile hamburger */
@@ -331,12 +431,47 @@ body::before {
   width: 100%;
   height: 100%;
 }
+/* Each concentric ring rotates around the SVG centre (180,180 in user
+   units). transform-box: view-box keeps the origin in viewBox coords
+   regardless of the ring's own bounding box. */
+.wireframe .orbit-svg .orbit-ring {
+  transform-box: view-box;
+  transform-origin: 180px 180px;
+}
+.wireframe .orbit-svg .orbit-ring--outer  { animation: orbit-spin 24s linear infinite; }
+.wireframe .orbit-svg .orbit-ring--mid    { animation: orbit-spin 18s linear infinite reverse; }
+.wireframe .orbit-svg .orbit-ring--inner  { animation: orbit-spin 12s linear infinite; }
+
+/* Small nodes travelling along each ring. Each node is parked at the
+   TOP of its ring and rotated around the SVG centre (180, 180). */
+.wireframe .orbit-svg .orbit-node {
+  fill: var(--forest);
+  transform-box: view-box;
+}
+.wireframe .orbit-svg .orbit-node--outer {
+  transform-origin: 180px 180px;
+  animation: orbit-spin 24s linear infinite;
+}
+.wireframe .orbit-svg .orbit-node--mid {
+  transform-origin: 180px 180px;
+  animation: orbit-spin 18s linear infinite reverse;
+}
+.wireframe .orbit-svg .orbit-node--inner {
+  transform-origin: 180px 180px;
+  animation: orbit-spin 12s linear infinite;
+}
+
 .wireframe .center-node {
   position: absolute;
   width: 16px;
   height: 16px;
   background: var(--forest);
   border-radius: 0;
+  animation: center-pulse 2.4s ease-in-out infinite;
+}
+@keyframes center-pulse {
+  0%, 100% { transform: scale(1);   opacity: 1; }
+  50%      { transform: scale(1.4); opacity: 0.7; }
 }
 .wireframe .blend-lum,
 .wireframe img.blend-lum {
@@ -888,4 +1023,37 @@ img.blend-lum:focus-visible {
   }
 
   .cta-form { padding: 24px; }
+
+  /* ============================================================
+     Mobile-only strictness — strip decorative chrome so each
+     page shows only the content that actually matters.
+     Desktop layout is untouched.
+     ============================================================ */
+
+  /* Hide the animated orbit/wireframe graphics on mobile */
+  .wireframe,
+  .net-graph { display: none; }
+
+  /* Hide the hero social icon row (GitHub/LinkedIn/Email) — all
+     three are reachable via Contact page on mobile. */
+  .hero .social-row { display: none; }
+
+  /* Hide the small page/section label chips ("02 — About",
+     "01 — Snapshot", etc.) — these are navigation chrome, not
+     content. The h1/h2 still conveys the section title. */
+  .page-title-block .label,
+  .section-head .label { display: none; }
+
+  /* With the label chip hidden, the right-column subtitle becomes
+     an orphan paragraph on mobile — drop it too. The h1 stands
+     alone as the page identifier. */
+  .page-title-block > p { display: none; }
+
+  /* Drop the stats-strip .section bars at the top of index and
+     projects — the same numbers are quoted throughout the page
+     and the dedicated pages already cover the detail. */
+  .stats-strip { display: none; }
+
+  /* Footer dev-credit line — purely decorative. */
+  .site-footer .mono-tag { display: none; }
 }
