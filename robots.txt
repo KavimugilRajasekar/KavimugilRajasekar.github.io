@@ -1,4 +1,25 @@
+# Robots.txt — Kavimugil Rajasekar Portfolio
+# https://KavimugilRajasekar.github.io
+
 User-agent: *
 Allow: /
 
+# Block AI scrapers that respect robots.txt (good-faith only)
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Disallow any test/dev assets that may be added later
+Disallow: /.vercel/
+Disallow: /assets/resume/*.bat
+
+# Sitemap location
 Sitemap: https://KavimugilRajasekar.github.io/sitemap.xml

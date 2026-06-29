@@ -1,33 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- Root / Home -->
   <url>
     <loc>https://KavimugilRajasekar.github.io/</loc>
-    <lastmod>2026-06-28</lastmod>
+    <lastmod>2026-06-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://KavimugilRajasekar.github.io/index.html</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/KavimugilRajasekar/AssetsHosting/main/profile-preview.png</image:loc>
+      <image:title>Kavimugil Rajasekar — Portfolio</image:title>
+      <image:caption>Computer Science Engineer &amp; Flutter Developer</image:caption>
+    </image:image>
+  </url>
+
+  <!-- About -->
+  <url>
     <loc>https://KavimugilRajasekar.github.io/about.html</loc>
-    <lastmod>2026-06-28</lastmod>
+    <lastmod>2026-06-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://KavimugilRajasekar.github.io/assets/images/profile.jpg</image:loc>
+      <image:title>Kavimugil Rajasekar — About</image:title>
+      <image:caption>Profile photo of Kavimugil Rajasekar</image:caption>
+    </image:image>
   </url>
+
+  <!-- Projects -->
   <url>
     <loc>https://KavimugilRajasekar.github.io/projects.html</loc>
-    <lastmod>2026-06-28</lastmod>
+    <lastmod>2026-06-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+
+  <!-- Resume -->
   <url>
     <loc>https://KavimugilRajasekar.github.io/resume.html</loc>
-    <lastmod>2026-06-28</lastmod>
+    <lastmod>2026-06-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- Contact -->
   <url>
     <loc>https://KavimugilRajasekar.github.io/contact.html</loc>
-    <lastmod>2026-06-28</lastmod>
+    <lastmod>2026-06-29</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+  </url>
+
+  <!-- Bottle Art (alternate creative theme) -->
+  <url>
+    <loc>https://KavimugilRajasekar.github.io/bottle-art/index.html</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://KavimugilRajasekar.github.io/bottle-art/about.html</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://KavimugilRajasekar.github.io/bottle-art/gallery.html</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://KavimugilRajasekar.github.io/bottle-art/contact.html</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>
