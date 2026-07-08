@@ -1,0 +1,55 @@
+1.
+Hello Connections! 👋
+I’m happy to share that I’ve successfully completed my 3-month internship at The Yellow Network (The Yellow Network).
+
+What started as a simple opportunity turned into one of the most valuable learning phases of my journey. I had the chance to work on real-world AI and web-based projects, moving beyond theory to understanding how practical systems are designed and applied.
+
+Here’s what I gained from this experience:
+ • Hands-on experience in AI project development
+ • Understanding of SDLC, SRS, and real-world workflows
+ • Exposure to Git and structured project management
+ • Improved communication and presentation skills
+ • Ability to think clearly, explain ideas, and defend solutions
+ • Realization that consistency and teamwork matter more than raw skill
+One important realization — this journey was not just about coding.
+ A big part of the growth came from learning how to communicate, collaborate, and handle feedback.
+
+My sincere thanks to Senthilvelan Natarajan, Vishnu A, and the entire Yzone team for their constant guidance and support.
+This experience has strengthened my interest in AI, and I’m excited to build more real-world projects and continue improving my skills.
+This is just the beginning.
+--------------------------------------------------------------------------------------------------------------
+2.
+I’m happy to announce that I have successfully completed the The Joy of Computing using Python certification offered by NPTEL during the Jan–Apr 2026 session.
+
+This 12-week journey strengthened my understanding of Python through problem-solving, logical thinking, and practical computing concepts. The course emphasized not just coding, but the joy of approaching problems computationally and creatively.
+
+I’m especially proud to have secured a score of 98/100, reflecting the consistency and dedication I invested throughout the program.
+Grateful to the instructors and the NPTEL platform for delivering such high-quality learning content that bridges theory with real-world application.
+Looking forward to applying these learnings in my projects and continuing to grow in the field of computing and software development.
+
+----------------------------------------------------------------------------------------------------------------
+3.
+I’m happy to share that I have successfully completed the Ethical Hacking and Penetration Testing training conducted by the Centre for Development of Advanced Computing (C-DAC), NOIDA, under the Cyber Gyan Project supported by the Ministry of Electronics and Information Technology, Government of India.
+
+This program strengthened my understanding of cybersecurity fundamentals, penetration testing methodologies, system vulnerabilities, and how ethical hackers think to secure real-world applications.
+
+As a CSE student at the Government College of Technology, Coimbatore, I strongly believe that learning security is essential for building reliable software. This training adds an important security perspective to my work.
+
+Grateful for the opportunity to learn from this initiative and excited to apply these practices while building secure and scalable applications.
+------------------------------------------------------------------------------------------------------------------
+4.
+I'm excited to share that I have completed my Web Developer Internship at CIFERTROOPER LLP from 21 April 2026 to 21 May 2026.
+During this internship, I had the opportunity to strengthen my web development skills and gain hands-on experience with various technologies and tools.
+
+Learnings & Contributions:
+1. Worked with WordPress for website development and customization.
+2. Explored and utilized HTTrack for website cloning and analysis.
+3. Successfully cloned a web application structure and recreated it using a different technology stack.
+4. Enhanced the application's UI/UX with modern design principles.
+5. Improved responsiveness, usability, and overall user experience.
+
+Gained practical exposure to real-world web development workflows and project implementation.
+
+I would like to express my sincere gratitude to Mr. Sanjeev K for guidance, support, and valuable learning opportunities throughout the internship journey.
+
+Looking forward to applying these skills to future projects and continuing my growth as a developer. 
