@@ -24,7 +24,7 @@
   <title>Resume | Kavimugil Rajasekar — Computer Science Engineer &amp; Flutter Developer</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="favicon.ico">
-  <link rel="alternate" type="application/pdf" title="Kavimugil Rajasekar Resume (PDF)" href="https://raw.githubusercontent.com/KavimugilRajasekar/AssetsHosting/main/Kavimugil_Rajasekar_Resume.pdf">
+  <link rel="alternate" type="application/pdf" title="Kavimugil Rajasekar Resume (PDF)" href="https://KavimugilRajasekar.github.io/resume/Kavimugil_Rajasekar_Resume.pdf">
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com"    crossorigin>
   <link rel="preconnect" href="https://api.fontshare.com"     crossorigin>
@@ -82,7 +82,7 @@
     "@type": "DigitalDocument",
     "name": "Kavimugil Rajasekar — Resume",
     "description": "Professional resume of Kavimugil Rajasekar — Computer Science Engineer & Flutter Developer.",
-    "url": "https://raw.githubusercontent.com/KavimugilRajasekar/AssetsHosting/main/Kavimugil_Rajasekar_Resume.pdf",
+    "url": "https://KavimugilRajasekar.github.io/resume/Kavimugil_Rajasekar_Resume.pdf",
     "encodingFormat": "application/pdf",
     "fileFormat": "application/pdf",
     "inLanguage": "en",
@@ -158,12 +158,27 @@
         display: inline-block;
         white-space: normal;
       }
+      /* Strip the outer paper/cover so the PDF fills the screen */
+      .cta-form {
+        max-width: 100%;
+        padding: 0;
+        border: none;
+        background: transparent;
+        border-radius: 0;
+        margin: 0;
+      }
+      .cta-form .corner { display: none; }
       .pdf-wrapper {
-        padding: 12px;
-        min-height: 300px;
+        padding: 0;
+        background: transparent;
+        box-shadow: none;
+        border-radius: 0;
+        min-height: auto;
       }
       .pdf-wrapper canvas {
-        border-radius: 3px;
+        border-radius: 2px;
+        max-width: 100%;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.08);
       }
     }
     /* Loading shimmer effect */
@@ -259,12 +274,12 @@
             <span class="label">04.1 — Document</span>
           </div>
           <div style="text-align:center; margin-bottom:24px;">
-            <a class="btn-solid" href="assets/resume/Kavimugil_Rajasekar_Resume.pdf" download="Kavimugil_Rajasekar_Resume.pdf">
+            <a class="btn-solid" href="resume/Kavimugil_Rajasekar_Resume.pdf" download="Kavimugil_Rajasekar_Resume.pdf">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 4v12M6 12l6 6 6-6M4 20h16"/></svg>
               Download PDF
             </a>
           </div>
-          <div class="cta-form" style="max-width: 1000px;">
+          <div class="cta-form" style="max-width: 1200px;">
             <span class="corner tl"></span><span class="corner tr"></span>
             <span class="corner bl"></span><span class="corner br"></span>
             <div style="text-align:center;">
@@ -281,11 +296,11 @@
             </div>
             <p id="pdf-error" style="display:none; text-align:center; padding: 24px; color: #b91c1c;">
               Unable to preview PDF. 
-              <a class="btn-ghost" style="margin-top:8px; display:inline-block;" href="assets/resume/Kavimugil_Rajasekar_Resume.pdf" download="Kavimugil_Rajasekar_Resume.pdf">Download the PDF</a> instead.
+              <a class="btn-ghost" style="margin-top:8px; display:inline-block;" href="resume/Kavimugil_Rajasekar_Resume.pdf" download="Kavimugil_Rajasekar_Resume.pdf">Download the PDF</a> instead.
             </p>
           </div>
           <p class="text-mono text-upper" style="margin-top: 24px; text-align:center; font-size: clamp(0.65rem, 1.5vw, 0.8rem);">
-            <a href="assets/resume/Kavimugil_Rajasekar_Resume.pdf" download="Kavimugil_Rajasekar_Resume.pdf">Download Resume</a>
+            <a href="resume/Kavimugil_Rajasekar_Resume.pdf" download="Kavimugil_Rajasekar_Resume.pdf">Download Resume</a>
             &nbsp;//&nbsp;
             <a href="contact.html">Contact Me</a>
           </p>
@@ -331,7 +346,7 @@
   <script src="js/main.js" defer></script>
   <script>
     // Global variables for zoom control
-    var currentScale = 3;
+    var currentScale = 4;
     var pdfDoc = null;
     var canvasElements = [];
     var pageObjects = [];
@@ -350,7 +365,7 @@
 
       pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
       
-      pdfjsLib.getDocument('assets/resume/Kavimugil_Rajasekar_Resume.pdf').promise
+      pdfjsLib.getDocument('resume/Kavimugil_Rajasekar_Resume.pdf').promise
         .then(function (pdf) {
           pdfDoc = pdf;
           if (loadingEl) loadingEl.style.display = 'none';
@@ -410,14 +425,14 @@
     }
 
     function updateZoomDisplay() {
-      var zoomPercent = Math.round((currentScale / 3) * 100);
+      var zoomPercent = Math.round((currentScale / 4) * 100);
       document.getElementById('zoom-level').textContent = zoomPercent + '%';
     }
 
     function zoomPDF(delta) {
       if (!pdfDoc) return;
-      
-      currentScale = Math.max(0.5, Math.min(4.0, currentScale + delta));
+
+      currentScale = Math.max(0.5, Math.min(6.0, currentScale + delta));
       
       // Clear existing canvases
       var container = document.getElementById('pdf-container');
@@ -438,7 +453,7 @@
     }
 
     function resetZoom() {
-      currentScale = 3;
+      currentScale = 4;
       zoomPDF(0); // This will re-render at current scale
     }
 

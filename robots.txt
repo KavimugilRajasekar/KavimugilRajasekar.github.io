@@ -19,7 +19,7 @@ Allow: /
 
 # Disallow any test/dev assets that may be added later
 Disallow: /.vercel/
-Disallow: /assets/resume/*.bat
+Disallow: /resume/*.bat
 
 # Sitemap location
 Sitemap: https://KavimugilRajasekar.github.io/sitemap.xml
