@@ -5,47 +5,52 @@
   <!-- Root / Home -->
   <url>
     <loc>https://KavimugilRajasekar.github.io/</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://KavimugilRajasekar.github.io/index.html</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://raw.githubusercontent.com/KavimugilRajasekar/AssetsHosting/main/profile-preview.png</image:loc>
-      <image:title>Kavimugil Rajasekar — Portfolio</image:title>
-      <image:caption>Computer Science Engineer &amp; Flutter Developer</image:caption>
+      <image:title>Kavimugil Rajasekar (Kavi) — Portfolio</image:title>
+      <image:caption>Computer Science Engineer &amp; Flutter Developer (Creator of N Queens Studio Game)</image:caption>
     </image:image>
   </url>
 
   <!-- About -->
   <url>
     <loc>https://KavimugilRajasekar.github.io/about.html</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://KavimugilRajasekar.github.io/assets/images/profile.jpg</image:loc>
-      <image:title>Kavimugil Rajasekar — About</image:title>
-      <image:caption>Profile photo of Kavimugil Rajasekar</image:caption>
+      <image:title>Kavimugil Rajasekar (Kavi) — About</image:title>
+      <image:caption>Profile photo of Kavimugil Rajasekar (Kavi)</image:caption>
     </image:image>
   </url>
 
   <!-- Projects -->
   <url>
     <loc>https://KavimugilRajasekar.github.io/projects.html</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://KavimugilRajasekar.github.io/assets/images/projects/n-queens.png</image:loc>
+      <image:title>N Queens Studio Game — Flutter App by Kavimugil Rajasekar (Kavi)</image:title>
+      <image:caption>N Queens Studio Game with camera scanning, AI solver, and Firebase multiplayer</image:caption>
+    </image:image>
   </url>
 
   <!-- LinkedIn Posts -->
   <url>
     <loc>https://KavimugilRajasekar.github.io/linkedin.html</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -53,7 +58,7 @@
   <!-- Resume -->
   <url>
     <loc>https://KavimugilRajasekar.github.io/resume.html</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -61,7 +66,7 @@
   <!-- Contact -->
   <url>
     <loc>https://KavimugilRajasekar.github.io/contact.html</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -69,25 +74,25 @@
   <!-- Bottle Art (alternate creative theme) -->
   <url>
     <loc>https://KavimugilRajasekar.github.io/bottle-art/index.html</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://KavimugilRajasekar.github.io/bottle-art/about.html</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://KavimugilRajasekar.github.io/bottle-art/gallery.html</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://KavimugilRajasekar.github.io/bottle-art/contact.html</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
