@@ -59,8 +59,8 @@
   <url>
     <loc>https://KavimugilRajasekar.github.io/rouint.html</loc>
     <lastmod>2026-10-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
     <image:image>
       <image:loc>https://KavimugilRajasekar.github.io/assets/images/projects/rouint.png</image:loc>
       <image:title>Rouint — CLI-Based API Endpoint Management &amp; Testing Tool</image:title>
