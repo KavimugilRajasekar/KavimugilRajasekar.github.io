@@ -2,110 +2,146 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  <!-- Root / Home -->
+  <!-- 01. Root / Home — Kavimugil Rajasekar Portfolio -->
   <url>
     <loc>https://KavimugilRajasekar.github.io/</loc>
-    <lastmod>2026-09-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://KavimugilRajasekar.github.io/index.html</loc>
-    <lastmod>2026-09-14</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://raw.githubusercontent.com/KavimugilRajasekar/AssetsHosting/main/profile-preview.png</image:loc>
-      <image:title>Kavimugil Rajasekar (Kavi) — Portfolio</image:title>
-      <image:caption>Computer Science Engineer &amp; Flutter Developer (Creator of N Queens Studio Game)</image:caption>
+      <image:loc>https://KavimugilRajasekar.github.io/assets/images/og-main.png</image:loc>
+      <image:title>Kavimugil Rajasekar (Kavi) — Software Engineer &amp; Flutter Developer Portfolio</image:title>
+      <image:caption>Official portfolio of Kavimugil Rajasekar — creator of Rouint CLI API tool and N Queens Studio Game</image:caption>
     </image:image>
-  </url>
-
-  <!-- About -->
-  <url>
-    <loc>https://KavimugilRajasekar.github.io/about.html</loc>
-    <lastmod>2026-09-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
     <image:image>
       <image:loc>https://KavimugilRajasekar.github.io/assets/images/profile.jpg</image:loc>
-      <image:title>Kavimugil Rajasekar (Kavi) — About</image:title>
-      <image:caption>Profile photo of Kavimugil Rajasekar (Kavi)</image:caption>
+      <image:title>Kavimugil Rajasekar (Kavi)</image:title>
+      <image:caption>Profile photo of software engineer Kavimugil Rajasekar</image:caption>
     </image:image>
   </url>
 
-  <!-- Projects -->
-  <url>
-    <loc>https://KavimugilRajasekar.github.io/projects.html</loc>
-    <lastmod>2026-09-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://KavimugilRajasekar.github.io/assets/images/projects/n-queens.png</image:loc>
-      <image:title>N Queens Studio Game — Flutter App by Kavimugil Rajasekar (Kavi)</image:title>
-      <image:caption>N Queens Studio Game with camera scanning, AI solver, and Firebase multiplayer</image:caption>
-    </image:image>
-  </url>
-
-  <!-- LinkedIn Posts -->
-  <url>
-    <loc>https://KavimugilRajasekar.github.io/linkedin.html</loc>
-    <lastmod>2026-09-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Rouint CLI Tool -->
+  <!-- 02. Rouint CLI Tool (PyPI Package) — Featured Star Project -->
   <url>
     <loc>https://KavimugilRajasekar.github.io/rouint.html</loc>
-    <lastmod>2026-10-10</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://KavimugilRajasekar.github.io/assets/images/projects/rouint.png</image:loc>
-      <image:title>Rouint — CLI-Based API Endpoint Management &amp; Testing Tool</image:title>
-      <image:caption>CLI API Endpoint Management and Testing Tool published on PyPI by Kavimugil Rajasekar</image:caption>
+      <image:title>Rouint — CLI-Based API Endpoint Management &amp; Testing Tool by Kavimugil Rajasekar</image:title>
+      <image:caption>Rouint logo and architecture: terminal API endpoint management, local environments, curl execution engine, published on PyPI (pip install rouint)</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://KavimugilRajasekar.github.io/assets/images/og-rouint.png</image:loc>
+      <image:title>Rouint CLI Tool — PyPI Package &amp; API Endpoint Testing</image:title>
+      <image:caption>Open source terminal API client created by Kavimugil Rajasekar</image:caption>
     </image:image>
   </url>
 
-  <!-- Resume -->
+  <!-- 03. Projects Catalog -->
   <url>
-    <loc>https://KavimugilRajasekar.github.io/resume.html</loc>
-    <lastmod>2026-09-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://KavimugilRajasekar.github.io/projects.html</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://KavimugilRajasekar.github.io/assets/images/projects/rouint.png</image:loc>
+      <image:title>Rouint — CLI API Endpoint Testing Tool on PyPI</image:title>
+      <image:caption>CLI API tool published on PyPI by Kavimugil Rajasekar</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://KavimugilRajasekar.github.io/assets/images/projects/n-queens.png</image:loc>
+      <image:title>N Queens Studio Game — Flutter App by Kavimugil Rajasekar</image:title>
+      <image:caption>N Queens Studio Game with camera scanning, AI solver, and Firebase multiplayer</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://KavimugilRajasekar.github.io/assets/images/projects/response-rally.png</image:loc>
+      <image:title>ResponseRally — Multi-Model AI Benchmarking Platform</image:title>
+      <image:caption>Parallel multi-provider LLM benchmarking tool by Kavimugil Rajasekar</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://KavimugilRajasekar.github.io/assets/images/projects/heeba.png</image:loc>
+      <image:title>Heeba — Local-First AI Terminal Companion</image:title>
+      <image:caption>Config-driven AI companion powered by llama.cpp and Ollama by Kavimugil Rajasekar</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://KavimugilRajasekar.github.io/assets/images/og-projects.png</image:loc>
+      <image:title>Projects Showcase — Kavimugil Rajasekar (Kavi)</image:title>
+      <image:caption>Catalog of 24 open-source repositories and applications</image:caption>
+    </image:image>
   </url>
 
-  <!-- Contact -->
+  <!-- 04. About -->
+  <url>
+    <loc>https://KavimugilRajasekar.github.io/about.html</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://KavimugilRajasekar.github.io/assets/images/profile.jpg</image:loc>
+      <image:title>Kavimugil Rajasekar (Kavi) — Biography &amp; Engineering Skills</image:title>
+      <image:caption>About Kavimugil Rajasekar, Computer Science Engineer at GCT Coimbatore</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://KavimugilRajasekar.github.io/assets/images/og-about.png</image:loc>
+      <image:title>About Kavimugil Rajasekar (Kavi)</image:title>
+      <image:caption>Biography, tech stack, and background of Kavimugil Rajasekar</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 05. LinkedIn Posts & Updates -->
+  <url>
+    <loc>https://KavimugilRajasekar.github.io/linkedin.html</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://KavimugilRajasekar.github.io/assets/images/og-linkedin.png</image:loc>
+      <image:title>LinkedIn Feed &amp; Insights by Kavimugil Rajasekar</image:title>
+      <image:caption>Technical articles, project milestones, and engineering insights</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 06. Contact -->
   <url>
     <loc>https://KavimugilRajasekar.github.io/contact.html</loc>
-    <lastmod>2026-09-14</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://KavimugilRajasekar.github.io/assets/images/og-contact.png</image:loc>
+      <image:title>Contact Kavimugil Rajasekar (Kavi)</image:title>
+      <image:caption>Contact and collaboration information for Kavimugil Rajasekar</image:caption>
+    </image:image>
   </url>
 
-  <!-- Bottle Art (alternate creative theme) -->
+  <!-- 07. Bottle Art (Creative showcase) -->
   <url>
     <loc>https://KavimugilRajasekar.github.io/bottle-art/index.html</loc>
-    <lastmod>2026-09-14</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <image:image>
+      <image:loc>https://KavimugilRajasekar.github.io/assets/images/og-bottle-art.png</image:loc>
+      <image:title>Bottle Art Portfolio by Kavimugil Rajasekar</image:title>
+      <image:caption>Handcrafted bottle artworks upcycled from discarded glass</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://KavimugilRajasekar.github.io/bottle-art/about.html</loc>
-    <lastmod>2026-09-14</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://KavimugilRajasekar.github.io/bottle-art/gallery.html</loc>
-    <lastmod>2026-09-14</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://KavimugilRajasekar.github.io/bottle-art/contact.html</loc>
-    <lastmod>2026-09-14</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

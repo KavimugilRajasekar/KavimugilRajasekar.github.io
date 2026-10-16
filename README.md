@@ -1,6 +1,6 @@
 # Kavimugil Rajasekar — Personal Portfolio
 
-![Profile preview](https://raw.githubusercontent.com/KavimugilRajasekar/AssetsHosting/main/profile-preview.png)
+![Profile preview](https://KavimugilRajasekar.github.io/assets/images/og-main.png)
 
 Personal portfolio website for **Kavimugil Rajasekar** — Computer Science Engineer &amp; Flutter Developer.
 
@@ -12,9 +12,10 @@ This is a fully static, GitHub-Pages-compatible site built on the in-house **Blu
 |---|---|---|
 | 01 | `index.html` | Hero, stats strip, featured projects, domain coverage. |
 | 02 | `about.html` | Bio, network topology, education + journey timeline, full skills inventory, languages, leadership. |
-| 03 | `projects.html` | All 23 repositories organized into Featured · Mobile · Desktop · AI/ML · CLI · Full-Stack · Embedded. |
-| 04 | `resume.html` | PDF preview (loaded from the `AssetsHosting` CDN) + network topology. |
-| 05 | `contact.html` | Email, phone, social channels, contact form, location map. |
+| 03 | `projects.html` | All repositories organized into Featured · Mobile · Desktop · AI/ML · CLI · Full-Stack · Embedded. |
+| 04 | `rouint.html` | Dedicated landing page for Rouint CLI API tool (published on PyPI). |
+| 05 | `linkedin.html` | Dynamic LinkedIn posts feed & engineering articles. |
+| 06 | `contact.html` | Email, phone, social channels, contact form, location map. |
 | —  | `bottle-art/` | Optional creative alternate theme. |
 | —  | `404.html` | Fallback error page. |
 
@@ -38,14 +39,14 @@ This is a fully static, GitHub-Pages-compatible site built on the in-house **Blu
 - `js/tubes.js` — interactive 3D tubes background (lazy-loads threejs-components from CDN; honors `prefers-reduced-motion`).
 - `js/main.js` — mobile nav toggle, dynamic copyright year.
 
-## Repositories Covered (24)
+## Repositories Covered (25)
 
-Featured: **N-Queens-Studio, ResponseRally, Heeba, Splitr**.
+Featured: **Rouint (PyPI package), N-Queens-Studio, ResponseRally, Heeba, Splitr**.
 
-Mobile (4): N-Queens-Solver, MySpace, Saengil-Alrim, ToggleTalk.
+CLI (4): **Rouint** (Published on PyPI: `pip install rouint`), Duplver, spacelyzer, MunaiGuard.
+Mobile (4): N-Queens-Studio, MySpace, Saengil-Alrim, ToggleTalk.
 Desktop (6): BillingSystem, RMediTracker, ai-studio-pro (Peak), SerialMonitor, Napify, uPy-Editor.
 AI / ML (4): MachineLearningLab, ResponseRally, n_queens_server, CounterView-AI.
-CLI (3): Duplver, spacelyzer, MunaiGuard.
 Full-Stack (6): C1X-WorkFLow-Builder, Food_Plaza, Cifertrooper-UI, LoginPage-PHP, AI-Yutham, nexus-technology.
 Embedded / Learning (2): MicroPy-In-ESP-Board, LeetCode_ProblemSolutions.
 
