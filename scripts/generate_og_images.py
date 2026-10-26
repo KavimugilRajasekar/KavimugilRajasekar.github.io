@@ -1,7 +1,7 @@
 import os
 from PIL import Image, ImageDraw, ImageFont
 
-OUTPUT_DIR = r"c:\Users\kavim\OneDrive\Desktop\KavimugilRajasekar.github.io\assets\images"
+OUTPUT_DIR = "assets/images"
 PROFILE_PATH = os.path.join(OUTPUT_DIR, "profile.jpg")
 ROUINT_PATH = os.path.join(OUTPUT_DIR, "projects", "rouint.png")
 
