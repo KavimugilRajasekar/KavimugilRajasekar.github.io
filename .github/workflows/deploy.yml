@@ -26,21 +26,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
-
-      - name: Install dependencies for OG image generation
-        run: |
-          # The generate_og_images.py script likely requires certain libraries.
-          # We will try to run it; if it fails, we'll refine the requirements.
-          pip install Pillow
-
-      - name: Generate Open Graph Images
-        run: |
-          python scripts/generate_og_images.py
-
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
