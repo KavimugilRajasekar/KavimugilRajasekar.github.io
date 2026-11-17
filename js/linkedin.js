@@ -20,7 +20,7 @@
         console.warn('linkedin.js:', err.message);
         var grid = document.getElementById('li-grid');
         if (grid) {
-          grid.innerHTML = '<p style="color:var(--grid);opacity:.6;font-family:var(--font-mono);font-size:var(--fs-mono-xs);">// Could not load posts. Open directly on <a href="https://www.linkedin.com/in/kavimugil-rajasekar-7273042a2/" target="_blank" rel="noreferrer" style="color:var(--forest);">LinkedIn &rarr;</a></p>';
+          grid.innerHTML = '<p style="color:var(--grid);opacity:.6;font-family:var(--font-mono);font-size:var(--fs-mono-xs);">// Could not load posts. Open directly on <a href="https://www.linkedin.com/in/kavimugil-rajasekar/" target="_blank" rel="noreferrer" style="color:var(--forest);">LinkedIn &rarr;</a></p>';
         }
         var count = document.getElementById('li-posts-count');
         if (count) count.textContent = '';
