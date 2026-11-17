@@ -1,72 +1,94 @@
-# Kavimugil Rajasekar — Personal Portfolio
+<table>
+<tr>
+<td width="24%" valign="middle">
 
-![Profile preview](https://KavimugilRajasekar.github.io/assets/images/og-main.png)
+<img src="https://kavimugilrajasekar.github.io/assets/images/profile.jpg" alt="Kavimugil Rajasekar" width="200"/>
 
-Personal portfolio website for **Kavimugil Rajasekar** — Computer Science Engineer &amp; Flutter Developer.
+</td>
+<td width="76%" valign="middle">
 
-This is a fully static, GitHub-Pages-compatible site built on the in-house **Blueprint v2.0 // forest** design system. It continuously synchronizes with the developer's GitHub repositories so the content always reflects the current state of their work.
+# Kavimugil Rajasekar
+
+<p><strong>Personal Portfolio &amp; Engineering Showcase</strong></p>
+
+<a href="https://kavimugilrajasekar.github.io"><img src="https://kavimugilrajasekar.github.io/favicon.ico" alt="Portfolio" height="18" style="vertical-align: middle;"/></a>&nbsp;&nbsp;&nbsp;
+<a href="https://github.com/KavimugilRajasekar">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Github_logo_svg.svg/1280px-Github_logo_svg.svg.png">
+    <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/960px-GitHub_Invertocat_Logo.svg.png" alt="GitHub" height="18">
+  </picture>
+</a>&nbsp;&nbsp;&nbsp;
+<a href="https://pypi.org/user/KavimugilRajasekar"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/PyPI-Logo-notext.svg/120px-PyPI-Logo-notext.svg.png" alt="PyPI" height="18" style="vertical-align: middle;"/></a>&nbsp;&nbsp;&nbsp;
+<a href="mailto:kavimugil28@gmail.com"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png" alt="Email" height="18" style="vertical-align: middle;"/></a>&nbsp;&nbsp;&nbsp;
+<a href="https://www.linkedin.com/in/kavimugil-rajasekar/"><img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" alt="LinkedIn" height="18" width="18" style="vertical-align: middle;"/></a>
+
+<br/><br/>
+
+Computer Science Engineer &amp; Systems Builder. Creator of **Rouint** (PyPI CLI tool), **N-Queens Puzzle Studio**, and cross-platform applications spanning Mobile (Flutter), Desktop, AI/ML, Full-Stack, and Embedded systems.
+
+</td>
+</tr>
+</table>
+
+---
+
+## Overview
+
+This repository hosts the source code for the personal portfolio of **Kavimugil Rajasekar**, served on GitHub Pages at [kavimugilrajasekar.github.io](https://kavimugilrajasekar.github.io/).
+
+The site is built with pure, framework-free web standards using the in-house **Blueprint // Forest** design system. It is fully static, lightweight, and structured for fast loading and clear technical presentation.
+
+---
 
 ## Pages
 
 | # | Page | Description |
 |---|---|---|
-| 01 | `index.html` | Hero, stats strip, featured projects, domain coverage. |
-| 02 | `about.html` | Bio, network topology, education + journey timeline, full skills inventory, languages, leadership. |
-| 03 | `projects.html` | All repositories organized into Featured · Mobile · Desktop · AI/ML · CLI · Full-Stack · Embedded. |
-| 04 | `rouint.html` | Dedicated landing page for Rouint CLI API tool (published on PyPI). |
-| 05 | `linkedin.html` | Dynamic LinkedIn posts feed & engineering articles. |
-| 06 | `contact.html` | Email, phone, social channels, contact form, location map. |
-| —  | `bottle-art/` | Optional creative alternate theme. |
-| —  | `404.html` | Fallback error page. |
+| 01 | [`index.html`](https://kavimugilrajasekar.github.io/index.html) | Hero introduction, key statistics, featured works, and domain overview. |
+| 02 | [`about.html`](https://kavimugilrajasekar.github.io/about.html) | Engineering journey, academic background, skill hierarchy, and leadership. |
+| 03 | [`projects.html`](https://kavimugilrajasekar.github.io/projects.html) | Complete repository catalog grouped across Mobile, Desktop, AI/ML, CLI, and Systems. |
+| 04 | [`rouint.html`](https://kavimugilrajasekar.github.io/rouint.html) | Dedicated landing page for the **Rouint** CLI API testing tool (`pip install rouint`). |
+| 05 | [`linkedin.html`](https://kavimugilrajasekar.github.io/linkedin.html) | Technical articles, system breakdown updates, and embedded posts feed. |
+| 06 | [`contact.html`](https://kavimugilrajasekar.github.io/contact.html) | Direct contact points including email, phone, and professional profiles. |
+| 07 | [`bottle-art/`](https://kavimugilrajasekar.github.io/bottle-art/) | Creative side exhibition featuring handcrafted bottle artwork. |
 
-## Design System
+---
 
-| Token | Value |
-|---|---|
-| Paper | `#F7F7F5` |
-| Forest | `#1A3C2B` |
-| Coral  | `#FF8C69` |
-| Mint   | `#9EFFBF` |
-| Gold   | `#F4D35E` |
-| Grid   | `#3A3A38` |
+## Featured Work & Engineering Domains
 
-- `css/tokens.css` — palette, typography, hairlines, geometry, layout.
-- `css/blueprint.css` — component library (header, hero, bento, timeline, cells, forms).
-- `css/layout.css` — page scaffolding & responsive helpers.
+- **CLI & Developer Tools:**
+  - **Rouint** (`pip install rouint`) — Terminal-native API exploration and load testing tool published on PyPI.
+  - **MunaiGuard**, **Duplver**, **spacelyzer**.
+- **Mobile Engineering (Flutter & Dart):**
+  - **N-Queens Puzzle Studio**, **MySpace Connect**, **Saengil-Alrim**, **ToggleTalk**.
+- **Desktop Applications:**
+  - **ai-studio-pro (Peak)**, **BillingSystem**, **RMediTracker**, **SerialMonitor**, **uPy-Editor**, **Napify**.
+- **AI & Machine Learning:**
+  - **ResponseRally**, **Heeba (AI Terminal Companion)**, **MachineLearningLab**, **CounterView-AI**.
+- **Full-Stack & Systems:**
+  - **C1X-WorkFlow-Builder**, **Food_Plaza**, **Cifertrooper-UI**, **MicroPy-In-ESP-Board**.
 
-## Interactivity
+---
 
-- `js/tubes.js` — interactive 3D tubes background (lazy-loads threejs-components from CDN; honors `prefers-reduced-motion`).
-- `js/main.js` — mobile nav toggle, dynamic copyright year.
+## Architecture & Tech Stack
 
-## Repositories Covered (25)
+- **Core Technologies:** Semantic HTML5, CSS3, Vanilla JavaScript (zero frontend framework overhead).
+- **Styling Architecture:** Blueprint layout system with modular tokens (`tokens.css`, `layout.css`, `blueprint.css`).
+- **Canvas Visuals:** Interactive 3D tube geometry renderer (`js/tubes.js`) with reduced-motion accessibility detection.
+- **Search & Discoverability:** Rich JSON-LD structured data and Open Graph meta tags across all pages.
 
-Featured: **Rouint (PyPI package), N-Queens-Studio, ResponseRally, Heeba, Splitr**.
+---
 
-CLI (4): **Rouint** (Published on PyPI: `pip install rouint`), Duplver, spacelyzer, MunaiGuard.
-Mobile (4): N-Queens-Studio, MySpace, Saengil-Alrim, ToggleTalk.
-Desktop (6): BillingSystem, RMediTracker, ai-studio-pro (Peak), SerialMonitor, Napify, uPy-Editor.
-AI / ML (4): MachineLearningLab, ResponseRally, n_queens_server, CounterView-AI.
-Full-Stack (6): C1X-WorkFLow-Builder, Food_Plaza, Cifertrooper-UI, LoginPage-PHP, AI-Yutham, nexus-technology.
-Embedded / Learning (2): MicroPy-In-ESP-Board, LeetCode_ProblemSolutions.
+## Connect
 
-## Local References
+- **Portfolio:** [kavimugilrajasekar.github.io](https://kavimugilrajasekar.github.io/)
+- **LinkedIn:** [kavimugil-rajasekar](https://www.linkedin.com/in/kavimugil-rajasekar/)
+- **GitHub:** [@KavimugilRajasekar](https://github.com/KavimugilRajasekar)
+- **PyPI:** [KavimugilRajasekar](https://pypi.org/user/KavimugilRajasekar/)
+- **Email:** [kavimugil28@gmail.com](mailto:kavimugil28@gmail.com)
 
-All project images live under `assets/images/projects/` — copied from each repository rather than hot-linked, so the site works fully offline.
-
-## Resume
-
-The PDF on `resume.html` is loaded directly from `https://raw.githubusercontent.com/KavimugilRajasekar/AssetsHosting/main/Kavimugil_Rajasekar_Resume.pdf` per the design rule "Resume in /resume always loads from URL, not local."
-
-## Setup
-
-```bash
-git clone https://github.com/KavimugilRajasekar/KavimugilRajasekar.github.io.git
-cd KavimugilRajasekar.github.io
-# open index.html in any browser, or serve with:
-python -m http.server 8000
-```
+---
 
 ## License
 
-Personal portfolio — all rights reserved by Kavimugil Rajasekar.
+Personal portfolio — all rights reserved (c) Kavimugil Rajasekar.
