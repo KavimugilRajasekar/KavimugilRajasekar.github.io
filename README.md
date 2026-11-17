@@ -18,7 +18,7 @@
     <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/960px-GitHub_Invertocat_Logo.svg.png" alt="GitHub" height="18">
   </picture>
 </a>&nbsp;&nbsp;&nbsp;
-<a href="https://pypi.org/user/KavimugilRajasekar"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/PyPI-Logo-notext.svg/120px-PyPI-Logo-notext.svg.png" alt="PyPI" height="18" style="vertical-align: middle;"/></a>&nbsp;&nbsp;&nbsp;
+<a href="https://pypi.org/user/kavimugil-r/"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/PyPI-Logo-notext.svg/120px-PyPI-Logo-notext.svg.png" alt="PyPI" height="18" style="vertical-align: middle;"/></a>&nbsp;&nbsp;&nbsp;
 <a href="mailto:kavimugil28@gmail.com"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png" alt="Email" height="18" style="vertical-align: middle;"/></a>&nbsp;&nbsp;&nbsp;
 <a href="https://www.linkedin.com/in/kavimugil-rajasekar/"><img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" alt="LinkedIn" height="18" width="18" style="vertical-align: middle;"/></a>
 
@@ -84,7 +84,7 @@ The site is built with pure, framework-free web standards using the in-house **B
 - **Portfolio:** [kavimugilrajasekar.github.io](https://kavimugilrajasekar.github.io/)
 - **LinkedIn:** [kavimugil-rajasekar](https://www.linkedin.com/in/kavimugil-rajasekar/)
 - **GitHub:** [@KavimugilRajasekar](https://github.com/KavimugilRajasekar)
-- **PyPI:** [KavimugilRajasekar](https://pypi.org/user/KavimugilRajasekar/)
+- **PyPI:** [kavimugil-r](https://pypi.org/user/kavimugil-r/)
 - **Email:** [kavimugil28@gmail.com](mailto:kavimugil28@gmail.com)
 
 ---
