@@ -22,7 +22,7 @@
 
   <!-- 02. Rouint CLI Tool (PyPI Package) — Featured Star Project -->
   <url>
-    <loc>https://KavimugilRajasekar.github.io/rouint.html</loc>
+    <loc>https://KavimugilRajasekar.github.io/rouint/</loc>
     <lastmod>2026-10-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -144,5 +144,47 @@
     <lastmod>2026-10-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+
+  <!-- Hibari (LLM engine) + Koto model (submodule) — dedicated project pages -->
+  <url>
+    <loc>https://KavimugilRajasekar.github.io/hibari/index.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://KavimugilRajasekar.github.io/assets/images/hibari/hibari-koto-overall-architecture.jpeg</image:loc>
+      <image:title>Hibari — LLM engine built from scratch, and Koto (Hibari-Koto1.3.1:29M)</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://KavimugilRajasekar.github.io/hibari/architecture.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://KavimugilRajasekar.github.io/assets/images/hibari/hibari-koto-transformer-block.jpeg</image:loc>
+      <image:title>Hibari architecture: Transformer block, attention with RoPE, tied embeddings</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://KavimugilRajasekar.github.io/hibari/koto.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://KavimugilRajasekar.github.io/assets/images/hibari/hibari-koto-attention.jpeg</image:loc>
+      <image:title>Koto 1.3.1 training, evaluation and versions</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://KavimugilRajasekar.github.io/hibari/get-started.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://KavimugilRajasekar.github.io/assets/images/hibari/hibari-koto-embedding-and-output.jpeg</image:loc>
+      <image:title>Run Hibari-Koto1.3.1:29M with Ollama, llama.cpp or Python</image:title>
+    </image:image>
   </url>
 </urlset>

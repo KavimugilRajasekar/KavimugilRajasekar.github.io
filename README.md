@@ -47,7 +47,8 @@ The site is built with pure, framework-free web standards using the in-house **B
 | 01 | [`index.html`](https://kavimugilrajasekar.github.io/index.html) | Hero introduction, key statistics, featured works, and domain overview. |
 | 02 | [`about.html`](https://kavimugilrajasekar.github.io/about.html) | Engineering journey, academic background, skill hierarchy, and leadership. |
 | 03 | [`projects.html`](https://kavimugilrajasekar.github.io/projects.html) | Complete repository catalog grouped across Mobile, Desktop, AI/ML, CLI, and Systems. |
-| 04 | [`rouint.html`](https://kavimugilrajasekar.github.io/rouint.html) | Dedicated landing page for the **Rouint** CLI API testing tool (`pip install rouint`). |
+| 04 | [`rouint/`](https://kavimugilrajasekar.github.io/rouint/) | Dedicated landing page for the **Rouint** CLI API testing tool (`pip install rouint`). The old `rouint.html` redirects here. |
+| 04b | [`hibari/`](https://kavimugilrajasekar.github.io/hibari/) | **Hibari** — LLM engine built from scratch, and its model **Koto** (`Hibari-Koto1.3.1:29M`): overview, architecture, Koto model, get started. |
 | 05 | [`linkedin.html`](https://kavimugilrajasekar.github.io/linkedin.html) | Technical articles, system breakdown updates, and embedded posts feed. |
 | 06 | [`contact.html`](https://kavimugilrajasekar.github.io/contact.html) | Direct contact points including email, phone, and professional profiles. |
 | 07 | [`bottle-art/`](https://kavimugilrajasekar.github.io/bottle-art/) | Creative side exhibition featuring handcrafted bottle artwork. |
@@ -56,6 +57,8 @@ The site is built with pure, framework-free web standards using the in-house **B
 
 ## Featured Work & Engineering Domains
 
+- **AI From Scratch:**
+  - **Hibari** — LLM engine written from first principles in PyTorch, with its model **Koto** (Git submodule) released as `Hibari-Koto1.3.1:29M` on [Hugging Face](https://huggingface.co/kavimugil-r/Hibari-Koto) and [Ollama](https://ollama.com/kavimugil-r/Hibari-Koto1.3.1).
 - **CLI & Developer Tools:**
   - **Rouint** (`pip install rouint`) — Terminal-native API exploration and load testing tool published on PyPI.
   - **MunaiGuard**, **Duplver**, **spacelyzer**.

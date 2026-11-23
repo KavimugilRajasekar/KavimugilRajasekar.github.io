@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hibari Architecture — Transformer, Attention, RoPE, GGUF | Hibari-Koto1.3.1:29M</title>
+  <meta name="description" content="The architecture of the Hibari engine and Koto 1.3.1: pre-norm Transformer blocks, multi-head causal attention with RoPE and KV cache, SwiGLU, tied embeddings, byte-level BPE and native GGUF export.">
+  <meta name="keywords" content="Hibari, Hibari LLM, Hibari Koto, Koto, Hibari-Koto1.3.1:29M, LLM from scratch, PyTorch transformer, GGUF, llama.cpp, Ollama, Hugging Face, small language model, RoPE, RMSNorm, SwiGLU, BPE tokenizer, Kavimugil Rajasekar, Kavimugil, Kavi">
+  <meta name="author" content="Kavimugil Rajasekar (Kavi)">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta property="og:title" content="Hibari Architecture — Transformer, Attention, RoPE, GGUF | Hibari-Koto1.3.1:29M">
+  <meta property="og:description" content="The architecture of the Hibari engine and Koto 1.3.1: pre-norm Transformer blocks, multi-head causal attention with RoPE and KV cache, SwiGLU, tied embeddings, byte-level BPE and native GGUF export.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://KavimugilRajasekar.github.io/hibari/architecture.html">
+  <meta property="og:image" content="https://KavimugilRajasekar.github.io/assets/images/hibari/hibari-koto-transformer-block.jpeg">
+  <meta property="og:site_name" content="Kavimugil Rajasekar Portfolio">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hibari Architecture — Transformer, Attention, RoPE, GGUF | Hibari-Koto1.3.1:29M">
+  <meta name="twitter:description" content="The architecture of the Hibari engine and Koto 1.3.1: pre-norm Transformer blocks, multi-head causal attention with RoPE and KV cache, SwiGLU, tied embeddings, byte-level BPE and native GGUF export.">
+  <meta name="twitter:image" content="https://KavimugilRajasekar.github.io/assets/images/hibari/hibari-koto-transformer-block.jpeg">
+  <link rel="canonical" href="https://KavimugilRajasekar.github.io/hibari/architecture.html">
+  <meta name="theme-color" content="#1A3C2B">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=general-sans@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/blueprint.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <style>
+    .hb-subnav { display:flex; gap:0; flex-wrap:wrap; border:1px solid var(--hairline); margin-top:28px; width:fit-content; }
+    .hb-subnav a { font-family:var(--font-mono); font-size:12px; letter-spacing:.08em; text-transform:uppercase; padding:10px 16px; border-right:1px solid var(--hairline); color:var(--forest); text-decoration:none; }
+    .hb-subnav a:last-child { border-right:none; }
+    .hb-subnav a.active { background:var(--forest); color:#fff; }
+    .hb-card { border:1px solid var(--hairline); padding:24px; background:var(--surface-card); }
+    .hb-table { width:100%; border-collapse:collapse; font-family:var(--font-mono); font-size:13px; }
+    .hb-table th { text-align:left; padding:10px 12px; border-bottom:2px solid var(--forest); color:var(--forest); }
+    .hb-table td { padding:9px 12px; border-bottom:1px solid var(--hairline); vertical-align:top; }
+    .hb-table td.num { text-align:right; white-space:nowrap; }
+    .hb-figure { border:1px solid var(--hairline); background:var(--surface-card); padding:12px; }
+    .hb-figure img { width:100%; height:auto; display:block; }
+    .hb-figure figcaption { font-family:var(--font-mono); font-size:12px; color:var(--text-muted); margin-top:10px; line-height:1.5; }
+    .hb-pre { font-family:var(--font-mono); font-size:13px; background:#0d1117; color:#c9d1d9; padding:16px; border-radius:4px; overflow-x:auto; margin-top:12px; line-height:1.5; }
+    .hb-note { border-left:3px solid var(--forest); padding:12px 16px; background:rgba(26,60,43,.05); font-size:15px; line-height:1.6; }
+    .hb-up { color:var(--forest); font-weight:700; } .hb-down { color:#b4462f; font-weight:700; }
+    .hb-links a { color:var(--forest); text-decoration:underline; }
+  </style>
+
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-row">
+      <a class="brand-logo" href="../index.html" aria-label="Kavimugil — Home">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="12" y1="3" x2="12" y2="21"/></svg>
+      </a>
+      <nav class="nav-links" id="nav-links" aria-label="Primary">
+        <a href="../index.html">01. Index</a>
+        <a href="../about.html">02. About</a>
+        <a href="../projects.html" class="active">03. Projects</a>
+        <a href="../linkedin.html">04. LinkedIn</a>
+        <a href="../contact.html">06. Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-shell">
+    <main>
+      <section class="page-title-block">
+        <div>
+          <span class="label">Hibari // Architecture</span>
+          <h1 style="font-size: clamp(2.5rem, 5vw, 4.2rem); font-weight: 700; letter-spacing: -0.02em;">Architecture</h1>
+          <p class="hero-sub" style="margin-top: 12px; font-size: var(--fs-h3); color: var(--text-muted); max-width: 820px;">A LLaMA-style decoder written from first principles</p>
+        </div>
+        <p style="max-width: 760px; margin-top: 16px; font-size: 16px; line-height: 1.6;">These diagrams show Koto 1.3.1 exactly as it is implemented in <code>src/hibari/model/</code>. The same code builds any size; Koto 1.1.x is the same structure at 6.2M parameters.</p>
+        <div style="margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center;"><a class="btn-solid" href="https://github.com/KavimugilRajasekar/Hibari/tree/feature/koto-1.3.1/src/hibari/model" target="_blank" rel="noreferrer">Model source &rarr;</a><a class="btn-ghost" href="https://github.com/KavimugilRajasekar/Hibari/blob/feature/koto-1.3.1/Docs/architecture/04_MODEL_DESIGN.md" target="_blank" rel="noreferrer">Design document &rarr;</a></div>
+        <nav class="hb-subnav" aria-label="Hibari pages"><a href="index.html">01. Overview</a><a href="architecture.html" class="active">02. Architecture</a><a href="koto.html">03. Koto Model</a><a href="get-started.html">04. Get Started</a></nav>
+      </section>
+      <section class="section" style="padding: 56px 0; border-top: 1px solid var(--hairline);">
+        <div class="container">
+          <div class="section-head">
+            <h2>Specification</h2>
+            <span class="label">Koto 1.3.1 vs 1.1.x</span>
+          </div>
+          <div style="margin-top: 28px;">
+<div style="overflow-x:auto;"><table class="hb-table"><thead><tr><th></th><th>Koto 1.3.1 (current)</th><th>Koto 1.1.x</th></tr></thead><tbody><tr><td>Type</td><td>Decoder-only causal Transformer (LLaMA-style)</td><td>same</td></tr><tr><td>Parameters</td><td><strong>29,368,832</strong></td><td>6,163,712</td></tr><tr><td>Blocks × width</td><td><strong>8 × 512</strong></td><td>6 × 256</td></tr><tr><td>Attention</td><td>8 heads × 64, full multi-head, no biases</td><td>8 heads × 32</td></tr><tr><td>Feed-forward</td><td>SwiGLU, d_ff 1536</td><td>SwiGLU, d_ff 768</td></tr><tr><td>Normalisation</td><td>pre-RMSNorm, ε = 1e-5</td><td>same</td></tr><tr><td>Positions</td><td>RoPE, θ = 10,000, adjacent-pair rotation</td><td>same</td></tr><tr><td>Regularisation</td><td>residual dropout 0.1</td><td>none</td></tr><tr><td>Context</td><td>256 tokens</td><td>same</td></tr><tr><td>Vocabulary</td><td>4,096 byte-level BPE tokens, 7 chat specials</td><td>same</td></tr><tr><td>Output head</td><td>tied to the token embedding</td><td>same</td></tr></tbody></table></div>
+          </div>
+        </div>
+      </section>
+      <section class="section" style="padding: 56px 0; border-top: 1px solid var(--hairline); background: var(--surface-card);">
+        <div class="container">
+          <div class="section-head">
+            <h2>1 · End to end</h2>
+            <span class="label">Overall architecture</span>
+          </div>
+          <div style="margin-top: 28px;">
+<figure class="hb-figure"><img src="../assets/images/hibari/hibari-koto-overall-architecture.jpeg" alt="Overall architecture" loading="lazy"><figcaption>The conversation is formatted with the chat template (<code>&lt;|system|&gt;</code>, <code>&lt;|user|&gt;</code>, <code>&lt;|assistant|&gt;</code>, end of turn <code>&lt;|eos|&gt;</code>), tokenised, embedded, passed through 8 blocks and a final RMSNorm, and projected to 4,096 logits. A token is sampled and fed back with the KV cache, so the prompt is processed once. <em>The diagrams were drawn for the 29.4M architecture shared by 1.3.0 and 1.3.1; 1.3.1 additionally uses residual dropout 0.1 during training (the diagram's “Dropout 0.0” is the attention dropout, unchanged).</em></figcaption></figure>
+          </div>
+        </div>
+      </section>
+      <section class="section" style="padding: 56px 0; border-top: 1px solid var(--hairline);">
+        <div class="container">
+          <div class="section-head">
+            <h2>2 · One Transformer block</h2>
+            <span class="label">Pre-norm residual block</span>
+          </div>
+          <div style="margin-top: 28px;">
+<div class="grid-2" style="grid-template-columns: 1.3fr 1fr; gap: 28px; align-items:start;">
+<figure class="hb-figure"><img src="../assets/images/hibari/hibari-koto-transformer-block.jpeg" alt="Transformer block" loading="lazy"><figcaption>h = x + Attention(RMSNorm(x)); y = h + SwiGLU(RMSNorm(h)).</figcaption></figure>
+<div class="stack-2">
+<p>Each block normalises <em>before</em> each sub-layer and adds the result back to the residual stream. Pre-norm keeps training stable without warm-up tricks.</p>
+<p><strong>SwiGLU</strong>: <code>down(silu(gate(x)) · up(x))</code>, three bias-free projections with hidden size 1536.</p>
+<p><strong>Residual dropout</strong> (new in engine 0.4.1) drops 10% of each sub-layer output during training only; it adds no parameters, so checkpoints and GGUFs are unaffected.</p>
+</div></div>
+          </div>
+        </div>
+      </section>
+      <section class="section" style="padding: 56px 0; border-top: 1px solid var(--hairline); background: var(--surface-card);">
+        <div class="container">
+          <div class="section-head">
+            <h2>3 · Attention</h2>
+            <span class="label">Multi-head causal self-attention</span>
+          </div>
+          <div style="margin-top: 28px;">
+<div class="grid-2" style="grid-template-columns: 1.3fr 1fr; gap: 28px; align-items:start;">
+<figure class="hb-figure"><img src="../assets/images/hibari/hibari-koto-attention.jpeg" alt="Multi-head causal attention with RoPE and KV cache" loading="lazy"><figcaption>Bias-free Q/K/V, RoPE on Q and K, KV cache, scaled dot-product with a causal mask.</figcaption></figure>
+<div class="stack-2">
+<p><strong>RoPE</strong> rotates adjacent pairs of each query and key by a position-dependent angle (θ = 10,000), so attention depends on relative position. This is exactly llama.cpp's <code>ROPE_TYPE_NORM</code>, so the weights are exported unpermuted.</p>
+<p><strong>KV cache</strong>: during generation each new token attends to the cached keys and values; tests check that this equals re-running the full sequence.</p>
+<p><strong>Causality</strong> is tested directly: changing token <em>j</em> never changes the logits before <em>j</em>.</p>
+</div></div>
+          </div>
+        </div>
+      </section>
+      <section class="section" style="padding: 56px 0; border-top: 1px solid var(--hairline);">
+        <div class="container">
+          <div class="section-head">
+            <h2>4 · Embedding and output</h2>
+            <span class="label">Tied weights</span>
+          </div>
+          <div style="margin-top: 28px;">
+<div class="grid-2" style="grid-template-columns: 1.3fr 1fr; gap: 28px; align-items:start;">
+<figure class="hb-figure"><img src="../assets/images/hibari/hibari-koto-embedding-and-output.jpeg" alt="Token embedding and tied output projection" loading="lazy"><figcaption>logits = h · Eᵀ — the output head reuses the embedding matrix.</figcaption></figure>
+<div class="stack-2">
+<p>The 4,096 × 512 embedding matrix is used twice: to look tokens up and, transposed, to score the next token. Tying saves 2.1M parameters and the GGUF omits <code>output.weight</code>.</p>
+<p><strong>Tokenizer</strong>: byte-level BPE trained for Koto, with 7 special tokens. Text a user types that looks like a special token (<code>&lt;|assistant|&gt;</code>) is escaped, so a user cannot forge turns.</p>
+</div></div>
+          </div>
+        </div>
+      </section>
+      <section class="section" style="padding: 56px 0; border-top: 1px solid var(--hairline); background: var(--surface-card);">
+        <div class="container">
+          <div class="section-head">
+            <h2>5 · The application layer</h2>
+            <span class="label">Python engine only</span>
+          </div>
+          <div style="margin-top: 28px;">
+<div style="overflow-x:auto;"><table class="hb-table"><thead><tr><th>#</th><th>Stage</th><th>What it does</th></tr></thead><tbody><tr><td>1</td><td>Safety layer</td><td>Self-harm, violent intent and harmful-instruction requests get a fixed, reviewed response; the model is not called.</td></tr><tr><td>2</td><td>Task router</td><td>Rewriting requests (rephrase, correct grammar, formal, casual, polite, shorten, simplify) are sent in the exact form used in training.</td></tr><tr><td>3</td><td>Normalisation</td><td>Chat shorthand (u, r, wat, thx) is expanded for the model only; safety and routing see the original text.</td></tr><tr><td>4</td><td>Candidates + critic</td><td>Several replies are sampled in one batched pass; a transparent critic ranks them (fluency, relevance, named appropriateness rules). It never writes text.</td></tr><tr><td>5</td><td>Cleaning</td><td>Chat markers removed, emojis capped, an unfinished last sentence trimmed. Nothing is added.</td></tr></tbody></table></div><p class="hb-note" style="margin-top:18px;">These stages live in the Python engine. A GGUF run in llama.cpp or Ollama returns the raw model's reply without them.</p>
+          </div>
+        </div>
+      </section>
+      <section class="section" style="padding: 56px 0; border-top: 1px solid var(--hairline);">
+        <div class="container">
+          <div class="section-head">
+            <h2>6 · GGUF export and parity</h2>
+            <span class="label">llama.cpp + Ollama</span>
+          </div>
+          <div style="margin-top: 28px;">
+<div style="overflow-x:auto;"><table class="hb-table"><thead><tr><th>Variant</th><th>Size</th><th>Same greedy reply as PyTorch (11 prompts)</th></tr></thead><tbody><tr><td>F32</td><td class="num">112.2 MiB</td><td class="num">11/11</td></tr><tr><td>F16</td><td class="num">56.2 MiB</td><td class="num">11/11</td></tr><tr><td>Q8_0</td><td class="num">29.9 MiB</td><td class="num">11/11</td></tr><tr><td>Q4_K_M</td><td class="num">17.5 MiB</td><td class="num">9/11</td></tr></tbody></table></div><p style='margin-top:16px;'>The exporter writes the <code>llama</code> GGUF architecture with the full tokenizer and chat template, plus <code>hibari.*</code> provenance metadata (model and weights version, checkpoint and tokenizer SHA-256). A NumPy reference runtime that reads only the GGUF reproduces the PyTorch logits.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; <span id="year"></span> Kavimugil Rajasekar. All rights reserved.</p>
+        <p class="mono-tag">Hibari // LLM engine from scratch // Koto 1.3.1</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../js/tubes.js" defer></script>
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

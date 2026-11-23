@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hibari — LLM Engine Built From Scratch &amp; Hibari-Koto1.3.1:29M | Kavimugil Rajasekar</title>
+  <meta name="description" content="Hibari is an LLM engine written from first principles in PyTorch by Kavimugil Rajasekar. Its first model, Koto (a Git submodule), is released as Hibari-Koto1.3.1:29M: a 29.4M-parameter conversational model on Hugging Face and Ollama.">
+  <meta name="keywords" content="Hibari, Hibari LLM, Hibari Koto, Koto, Hibari-Koto1.3.1:29M, LLM from scratch, PyTorch transformer, GGUF, llama.cpp, Ollama, Hugging Face, small language model, RoPE, RMSNorm, SwiGLU, BPE tokenizer, Kavimugil Rajasekar, Kavimugil, Kavi">
+  <meta name="author" content="Kavimugil Rajasekar (Kavi)">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta property="og:title" content="Hibari — LLM Engine Built From Scratch &amp; Hibari-Koto1.3.1:29M | Kavimugil Rajasekar">
+  <meta property="og:description" content="Hibari is an LLM engine written from first principles in PyTorch by Kavimugil Rajasekar. Its first model, Koto (a Git submodule), is released as Hibari-Koto1.3.1:29M: a 29.4M-parameter conversational model on Hugging Face and Ollama.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://KavimugilRajasekar.github.io/hibari/index.html">
+  <meta property="og:image" content="https://KavimugilRajasekar.github.io/assets/images/hibari/hibari-koto-overall-architecture.jpeg">
+  <meta property="og:site_name" content="Kavimugil Rajasekar Portfolio">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hibari — LLM Engine Built From Scratch &amp; Hibari-Koto1.3.1:29M | Kavimugil Rajasekar">
+  <meta name="twitter:description" content="Hibari is an LLM engine written from first principles in PyTorch by Kavimugil Rajasekar. Its first model, Koto (a Git submodule), is released as Hibari-Koto1.3.1:29M: a 29.4M-parameter conversational model on Hugging Face and Ollama.">
+  <meta name="twitter:image" content="https://KavimugilRajasekar.github.io/assets/images/hibari/hibari-koto-overall-architecture.jpeg">
+  <link rel="canonical" href="https://KavimugilRajasekar.github.io/hibari/index.html">
+  <meta name="theme-color" content="#1A3C2B">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=general-sans@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/blueprint.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <style>
+    .hb-subnav { display:flex; gap:0; flex-wrap:wrap; border:1px solid var(--hairline); margin-top:28px; width:fit-content; }
+    .hb-subnav a { font-family:var(--font-mono); font-size:12px; letter-spacing:.08em; text-transform:uppercase; padding:10px 16px; border-right:1px solid var(--hairline); color:var(--forest); text-decoration:none; }
+    .hb-subnav a:last-child { border-right:none; }
+    .hb-subnav a.active { background:var(--forest); color:#fff; }
+    .hb-card { border:1px solid var(--hairline); padding:24px; background:var(--surface-card); }
+    .hb-table { width:100%; border-collapse:collapse; font-family:var(--font-mono); font-size:13px; }
+    .hb-table th { text-align:left; padding:10px 12px; border-bottom:2px solid var(--forest); color:var(--forest); }
+    .hb-table td { padding:9px 12px; border-bottom:1px solid var(--hairline); vertical-align:top; }
+    .hb-table td.num { text-align:right; white-space:nowrap; }
+    .hb-figure { border:1px solid var(--hairline); background:var(--surface-card); padding:12px; }
+    .hb-figure img { width:100%; height:auto; display:block; }
+    .hb-figure figcaption { font-family:var(--font-mono); font-size:12px; color:var(--text-muted); margin-top:10px; line-height:1.5; }
+    .hb-pre { font-family:var(--font-mono); font-size:13px; background:#0d1117; color:#c9d1d9; padding:16px; border-radius:4px; overflow-x:auto; margin-top:12px; line-height:1.5; }
+    .hb-note { border-left:3px solid var(--forest); padding:12px 16px; background:rgba(26,60,43,.05); font-size:15px; line-height:1.6; }
+    .hb-up { color:var(--forest); font-weight:700; } .hb-down { color:#b4462f; font-weight:700; }
+    .hb-links a { color:var(--forest); text-decoration:underline; }
+  </style>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@graph": [
+    {"@type": "SoftwareSourceCode", "@id": "https://KavimugilRajasekar.github.io/hibari/index.html#software", "name": "Hibari",
+      "alternateName": ["Hibari LLM", "Hibari engine", "Hibari Koto"],
+      "description": "An LLM engine written from first principles in PyTorch (model, BPE tokenizer, training, inference, safety layer, GGUF export) and Koto, its first conversational model.",
+      "codeRepository": "https://github.com/KavimugilRajasekar/Hibari", "programmingLanguage": "Python", "license": "https://opensource.org/licenses/MIT",
+      "author": {"@id": "https://KavimugilRajasekar.github.io/#person"}, "url": "https://KavimugilRajasekar.github.io/hibari/index.html", "image": "https://KavimugilRajasekar.github.io/assets/images/hibari/hibari-koto-overall-architecture.jpeg",
+      "hasPart": {"@id": "https://KavimugilRajasekar.github.io/hibari/koto.html#model"}},
+    {"@type": "SoftwareSourceCode", "@id": "https://KavimugilRajasekar.github.io/hibari/koto.html#model", "name": "Hibari-Koto1.3.1:29M", "alternateName": ["Koto", "Hibari Koto", "Koto 1.3.1"],
+      "description": "Koto 1.3.1, a 29.4M-parameter conversational model trained from scratch on the Hibari engine; GGUF for llama.cpp and Ollama.",
+      "codeRepository": "https://github.com/KavimugilRajasekar/Koto", "isPartOf": {"@id": "https://KavimugilRajasekar.github.io/hibari/index.html#software"}, "url": "https://KavimugilRajasekar.github.io/hibari/koto.html",
+      "sameAs": ["https://huggingface.co/kavimugil-r/Hibari-Koto", "https://ollama.com/kavimugil-r/Hibari-Koto1.3.1"], "author": {"@id": "https://KavimugilRajasekar.github.io/#person"}},
+    {"@type": "Person", "@id": "https://KavimugilRajasekar.github.io/#person", "name": "Kavimugil Rajasekar", "url": "https://KavimugilRajasekar.github.io/",
+      "sameAs": ["https://github.com/KavimugilRajasekar", "https://huggingface.co/kavimugil-r", "https://ollama.com/kavimugil-r", "https://www.linkedin.com/in/kavimugil-rajasekar/"]},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://KavimugilRajasekar.github.io/"},
+      {"@type": "ListItem", "position": 2, "name": "Projects", "item": "https://KavimugilRajasekar.github.io/projects.html"},
+      {"@type": "ListItem", "position": 3, "name": "Hibari", "item": "https://KavimugilRajasekar.github.io/hibari/index.html"}]}
+  ]}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-row">
+      <a class="brand-logo" href="../index.html" aria-label="Kavimugil — Home">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="12" y1="3" x2="12" y2="21"/></svg>
+      </a>
+      <nav class="nav-links" id="nav-links" aria-label="Primary">
+        <a href="../index.html">01. Index</a>
+        <a href="../about.html">02. About</a>
+        <a href="../projects.html" class="active">03. Projects</a>
+        <a href="../linkedin.html">04. LinkedIn</a>
+        <a href="../contact.html">06. Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-shell">
+    <main>
+      <section class="page-title-block">
+        <div>
+          <span class="label">Open Source // LLM Engine Built From Scratch</span>
+          <h1 style="font-size: clamp(2.5rem, 5vw, 4.2rem); font-weight: 700; letter-spacing: -0.02em;">Hibari</h1>
+          <p class="hero-sub" style="margin-top: 12px; font-size: var(--fs-h3); color: var(--text-muted); max-width: 820px;">An LLM engine written from first principles in PyTorch — and Koto, the conversational model built with it</p>
+        </div>
+        <p style="max-width: 760px; margin-top: 16px; font-size: 16px; line-height: 1.6;">Every part of Hibari is written directly: the Transformer, the byte-level BPE tokenizer, the training loop, KV-cache inference, a safety layer, a reply critic and a native GGUF exporter. No pretrained weights and no high-level model library are used. Its first model, <strong>Koto</strong>, lives in its own repository as a Git submodule of Hibari; the current release is <strong>Hibari-Koto1.3.1:29M</strong>.</p>
+        <div style="margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center;"><a class="btn-solid" href="https://github.com/KavimugilRajasekar/Hibari/tree/feature/koto-1.3.1" target="_blank" rel="noreferrer">Hibari on GitHub &rarr;</a><a class="btn-ghost" href="https://github.com/KavimugilRajasekar/Koto/tree/release/1.3.1" target="_blank" rel="noreferrer">Koto on GitHub &rarr;</a><a class="btn-ghost" href="https://huggingface.co/kavimugil-r/Hibari-Koto" target="_blank" rel="noreferrer">Hugging Face &rarr;</a><a class="btn-ghost" href="https://ollama.com/kavimugil-r/Hibari-Koto1.3.1" target="_blank" rel="noreferrer">Ollama &rarr;</a><a class="btn-ghost" href="../projects.html">&larr; Back to Projects</a></div>
+        <nav class="hb-subnav" aria-label="Hibari pages"><a href="index.html" class="active">01. Overview</a><a href="architecture.html">02. Architecture</a><a href="koto.html">03. Koto Model</a><a href="get-started.html">04. Get Started</a></nav>
+      </section>
+      <section class="section" style="padding: 28px 0; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); background: rgba(26, 60, 43, 0.05);">
+        <div class="container" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+          <div>
+            <span class="cell-label cell-label--mint">Run Koto in one line</span>
+            <div style="font-family: var(--font-mono); font-size: 18px; margin-top: 6px; font-weight: 700; color: var(--forest);">ollama run kavimugil-r/Hibari-Koto1.3.1:29M</div>
+          </div>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <span class="tech-tag">PyTorch</span><span class="tech-tag">From scratch</span><span class="tech-tag">GGUF</span>
+            <span class="tech-tag">llama.cpp</span><span class="tech-tag">Ollama</span><span class="tech-tag">Hugging Face</span>
+          </div>
+        </div>
+      </section>
+      <section class="section" style="padding: 56px 0; border-top: 1px solid var(--hairline);">
+        <div class="container">
+          <div class="section-head">
+            <h2>What Hibari is</h2>
+            <span class="label">The engine and its name</span>
+          </div>
+          <div style="margin-top: 28px;">
+<div class="grid-2" style="grid-template-columns: 1fr 1.4fr; gap: 40px; align-items: center;">
+  <div class="hb-card" style="padding: 28px; text-align: center;"><img src="../assets/images/hibari/hibari-logo.jpeg" alt="Hibari logo" style="max-width: 100%; height: auto; display: block; margin: 0 auto;" loading="eager"></div>
+  <div class="stack-2">
+    <p><strong>Hibari</strong> (雲雀, Japanese for the skylark) is a research project to build a language model the long way: every layer is written and tested in this repository instead of being imported. The goal is understanding — a small model whose every number can be traced to the code, data and run that produced it.</p>
+    <p>The engine is deliberately <strong>model-agnostic</strong>: sizes come from a config file, and a model lives in its own repository. <strong>Koto</strong> is the first one; a release binds its checkpoint, tokenizer and GGUF files together by SHA-256, so a published file can always be traced back to its training run.</p>
+    <p class="text-mono" style="font-size:13px;">Author: Kavimugil Rajasekar · MIT licence · started 2026</p>
+  </div>
+</div>
+          </div>
+        </div>
+      </section>
+      <section class="section" style="padding: 56px 0; border-top: 1px solid var(--hairline);">
+        <div class="container">
+          <div class="section-head">
+            <h2>Koto 1.3.1 at a glance</h2>
+            <span class="label">Current release</span>
+          </div>
+          <div style="margin-top: 28px;">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;"><div class="hb-card" style="padding:18px;"><span class="cell-label cell-label--mint">Parameters</span><div style="font-family:var(--font-mono);font-size:22px;font-weight:700;color:var(--forest);margin-top:8px;">29,368,832</div></div><div class="hb-card" style="padding:18px;"><span class="cell-label cell-label--mint">Layers / width</span><div style="font-family:var(--font-mono);font-size:22px;font-weight:700;color:var(--forest);margin-top:8px;">8 × 512</div></div><div class="hb-card" style="padding:18px;"><span class="cell-label cell-label--mint">Context</span><div style="font-family:var(--font-mono);font-size:22px;font-weight:700;color:var(--forest);margin-top:8px;">256 tokens</div></div><div class="hb-card" style="padding:18px;"><span class="cell-label cell-label--mint">Vocabulary</span><div style="font-family:var(--font-mono);font-size:22px;font-weight:700;color:var(--forest);margin-top:8px;">4,096 BPE</div></div><div class="hb-card" style="padding:18px;"><span class="cell-label cell-label--mint">Best val loss</span><div style="font-family:var(--font-mono);font-size:22px;font-weight:700;color:var(--forest);margin-top:8px;">2.781</div></div><div class="hb-card" style="padding:18px;"><span class="cell-label cell-label--mint">Training</span><div style="font-family:var(--font-mono);font-size:22px;font-weight:700;color:var(--forest);margin-top:8px;">1.72 h, 1 GPU</div></div></div><p class="hb-note" style="margin-top:20px;">Compared with the previous release (1.1.1, 6.2M parameters), 1.3.1 is better at following a conversation (conversation suite 0.645 → <strong>0.733</strong>) and weaker at rewriting text (behaviour suite 0.660 → 0.628). <a href="koto.html" style="color:var(--forest);text-decoration:underline;">All results &rarr;</a></p>
+          </div>
+        </div>
+      </section>
+      <section class="section" style="padding: 56px 0; border-top: 1px solid var(--hairline);">
+        <div class="container">
+          <div class="section-head">
+            <h2>Two repositories, one direction</h2>
+            <span class="label">Engine + submodule model</span>
+          </div>
+          <div style="margin-top: 28px;">
+<div class="grid-2" style="grid-template-columns: 1fr 1fr; gap: 24px;">
+  <div class="hb-card stack-2">
+    <span class="cell-label cell-label--mint">Engine</span>
+    <h3 style="font-size: var(--fs-h3);">Hibari</h3>
+    <p>A reusable, model-agnostic Python package (<code>hibari</code>) that can build, train, run, evaluate and export any model of this architecture. It never imports a model.</p>
+    <p class="text-mono" style="font-size:13px;">github.com/KavimugilRajasekar/Hibari · engine 0.4.1 · 418 tests</p>
+    <div><a class="btn-ghost" href="https://github.com/KavimugilRajasekar/Hibari/tree/feature/koto-1.3.1" target="_blank" rel="noreferrer">Engine repository &rarr;</a></div>
+  </div>
+  <div class="hb-card stack-2">
+    <span class="cell-label cell-label--coral">Model · Git submodule <code>models/Koto</code></span>
+    <h3 style="font-size: var(--fs-h3);">Koto</h3>
+    <p>One concrete model: configs, tokenizer, data recipes, training runs, evaluation suites, experiment records and release files. Koto imports Hibari and only uses it.</p>
+    <p class="text-mono" style="font-size:13px;">github.com/KavimugilRajasekar/Koto · release 1.3.1 · 87 tests</p>
+    <div><a class="btn-ghost" href="https://github.com/KavimugilRajasekar/Koto/tree/release/1.3.1" target="_blank" rel="noreferrer">Model repository &rarr;</a></div>
+  </div>
+</div>
+<pre class="hb-pre">git clone --recurse-submodules https://github.com/KavimugilRajasekar/Hibari.git
+Hibari/                    engine: src/hibari, scripts/engine, tests, Docs
+└── models/Koto/           submodule: configs, tokenizer, koto/ data + evaluation,
+                           training/, experiments/, releases/, docs/
+
+dependency:  Koto ──uses──▶ Hibari      (never the other way)</pre>
+          </div>
+        </div>
+      </section>
+      <section class="section" style="padding: 56px 0; border-top: 1px solid var(--hairline); background: var(--surface-card);">
+        <div class="container">
+          <div class="section-head">
+            <h2>Architecture</h2>
+            <span class="label">How a reply is produced</span>
+          </div>
+          <div style="margin-top: 28px;">
+<figure class="hb-figure"><img src="../assets/images/hibari/hibari-koto-overall-architecture.jpeg" alt="Hibari Koto overall architecture" loading="lazy"><figcaption>Chat turns → byte-level BPE tokenizer → token embedding → 8 pre-norm Transformer blocks → final RMSNorm → tied LM head → sampling, repeated token by token. <em>The diagrams were drawn for the 29.4M architecture shared by 1.3.0 and 1.3.1; 1.3.1 additionally uses residual dropout 0.1 during training (the diagram's “Dropout 0.0” is the attention dropout, unchanged).</em> <a href='architecture.html' style='color:var(--forest);text-decoration:underline;'>Every component explained &rarr;</a></figcaption></figure>
+          </div>
+        </div>
+      </section>
+      <section class="section" style="padding: 56px 0; border-top: 1px solid var(--hairline);">
+        <div class="container">
+          <div class="section-head">
+            <h2>Inside the engine</h2>
+            <span class="label">One package per responsibility</span>
+          </div>
+          <div style="margin-top: 28px;">
+<div style="overflow-x:auto;"><table class="hb-table"><thead><tr><th>Layer</th><th>Package</th><th>What it does</th></tr></thead><tbody><tr><td>Model</td><td><code>hibari.model</code></td><td>Decoder-only Transformer: token embedding, RoPE, multi-head causal attention with KV cache, SwiGLU, pre-RMSNorm, tied output head, residual dropout</td></tr><tr><td>Tokenizer</td><td><code>hibari.data.tokenizer</code></td><td>Byte-level BPE (4,096 tokens), chat template, escaping of special-token text typed by users</td></tr><tr><td>Data</td><td><code>hibari.data</code></td><td>Conversation formatting, windowing that never cuts a reply, assistant-only loss masking, length-grouped batching</td></tr><tr><td>Training</td><td><code>hibari.training</code></td><td>AdamW with warm-up + cosine schedule, token-weighted gradient accumulation, resume, checkpoint provenance</td></tr><tr><td>Inference</td><td><code>hibari.inference</code></td><td>Batched KV-cache sampling, streaming, chat session with context trimming, rewriting-task router, informal-text normalisation</td></tr><tr><td>Safety &amp; ranking</td><td><code>safety</code> · <code>reranking</code></td><td>Deterministic safety layer with reviewed responses; a critic that ranks several model-written replies (it never writes text)</td></tr><tr><td>Export</td><td><code>hibari.export</code></td><td>Native GGUF writer (F32 / F16, then Q8_0 / Q4_K_M via llama.cpp) and a NumPy reference runtime that reads only the GGUF</td></tr><tr><td>Release</td><td><code>hibari.release</code></td><td>Release profiles that bind version, weights, tokenizer and GGUFs by SHA-256; validator; generated Ollama Modelfile</td></tr></tbody></table></div>
+          </div>
+        </div>
+      </section>
+      <section class="section" style="padding: 56px 0; border-top: 1px solid var(--hairline); background: var(--surface-card);">
+        <div class="container">
+          <div class="section-head">
+            <h2>Links</h2>
+            <span class="label">Everything in one place</span>
+          </div>
+          <div style="margin-top: 28px;">
+<div class="hb-links"><div style="overflow-x:auto;"><table class="hb-table"><thead><tr><th>What</th><th>Where</th></tr></thead><tbody><tr><td>Engine source</td><td><a href="https://github.com/KavimugilRajasekar/Hibari/tree/feature/koto-1.3.1" target="_blank" rel="noreferrer">github.com/KavimugilRajasekar/Hibari</a></td></tr><tr><td>Model source (submodule)</td><td><a href="https://github.com/KavimugilRajasekar/Koto/tree/release/1.3.1" target="_blank" rel="noreferrer">github.com/KavimugilRajasekar/Koto</a></td></tr><tr><td>Model weights (GGUF + PyTorch)</td><td><a href="https://huggingface.co/kavimugil-r/Hibari-Koto" target="_blank" rel="noreferrer">huggingface.co/kavimugil-r/Hibari-Koto</a></td></tr><tr><td>Ollama</td><td><a href="https://ollama.com/kavimugil-r/Hibari-Koto1.3.1" target="_blank" rel="noreferrer">ollama.com/kavimugil-r/Hibari-Koto1.3.1</a> · <code>ollama run kavimugil-r/Hibari-Koto1.3.1:29M</code></td></tr><tr><td>Release report</td><td><a href="https://github.com/KavimugilRajasekar/Koto/blob/release/1.3.1/docs/34_KOTO_1.3.1_RELEASE_REPORT.md" target="_blank" rel="noreferrer">docs/34 — Koto 1.3.1 release report</a></td></tr><tr><td>Model card</td><td><a href="https://github.com/KavimugilRajasekar/Koto/blob/release/1.3.1/MODEL_CARD.md" target="_blank" rel="noreferrer">MODEL_CARD.md</a></td></tr><tr><td>Engine documentation</td><td><a href="https://github.com/KavimugilRajasekar/Hibari/tree/feature/koto-1.3.1/Docs" target="_blank" rel="noreferrer">Hibari/Docs</a></td></tr><tr><td>Author</td><td><a href="https://huggingface.co/kavimugil-r" target="_blank" rel="noreferrer">Hugging Face</a> · <a href="https://ollama.com/kavimugil-r" target="_blank" rel="noreferrer">Ollama</a> · <a href="https://github.com/KavimugilRajasekar" target="_blank" rel="noreferrer">GitHub</a></td></tr></tbody></table></div></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; <span id="year"></span> Kavimugil Rajasekar. All rights reserved.</p>
+        <p class="mono-tag">Hibari // LLM engine from scratch // Koto 1.3.1</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../js/tubes.js" defer></script>
+  <script src="../js/main.js" defer></script>
+</body>
+</html>
